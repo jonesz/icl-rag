@@ -1,0 +1,1224 @@
+This document has been approved for Public Release per DAA #71173 pending organizational review.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This specification establishes the performance and design requirements for the Gateway as allocated from Human Exploration and Operations Directorate Requirements, HEOMD-004.
+Requirements in section 3.2 define the performance of the Gateway as a whole.
+Requirements in sections 3.3 through 3.6 are constraints with which the Gateway must comply.
+The performance requirements herein are applicable during nominal operations, maintenance, and contingency events.
+This document is applicable to the assembly and assembly complete stage of the Gateway.
+Proposed changes to this document shall be submitted via a Change Request (CR) to the Gateway Program Control Board (GPCB) for consideration and disposition.
+All such, requests will adhere to the Gateway Configuration Management Change Process documented in DSG-PLAN-004.
+The appropriate National Aeronautics and Space Administration (NASA) Office of Primary Responsibility (OPR) identified for this document is the Gateway Vehicle Systems Integration (VSIO) Requirements Development Team.
+Rationales, included for many of the requirements, are intended to provide clarification, justification, purpose, and/or the source of a requirement.
+In the event that there is an inconsistency between a requirement and its rationale, the requirement always takes precedence.
+The Gateway Program will utilize NIST SP811, Guide for the Use of the International System of Units (SI) for standardization and conversion of the units of measure.
+This document may only be released according to the Destination Control Statement on the front cover.
+For the purpose of this document, the term ‘document’ can also refer to ‘digital artifacts,’ ‘models,’ or ‘viewpoints’ as needed to convey and exchange configuration managed data or information.
+An objective of the Gateway Program is to evolve into a digital engineering environment and away from the traditional document-based approach for capturing data, reports and baselines.
+The following documents may include specifications, models, standards, guidelines, handbooks, and other special publications that are called out in sections 3.2 through 3.6.
+The documents listed in this paragraph are applicable to the extent specified herein.
+Type 1 documents or standards are those that contain requirements the Program must meet as written.
+Type 2 documents or standards are those that contain requirements the Program can either choose to adopt or accept an alternate proposal.
+Type 3 documents or standards are those that represent the ‘best practices’ observed by or normally used by NASA over the substantial development history of both human and non- human spaceflight missions.
+The Program does not need to either formally adopt the documents or recommend an alternate.
+This document may only be released according to the Destination Control Statement on the front cover.
+This section identifies the Technical Authority (TA) Standards and Requirements and designations.
+The NASA Program Manager and TAs are responsible for determining how these standards and requirements are applied depending on the specified type.
+There are currently no Type 1 TA Standards and Requirements identified.
+Type 2 documents are those that contain requirements the Program can either choose to adopt or accept an alternate proposal.
+The Element or Module provider will be allowed to propose alternate requirements within documents that they consider to meet or exceed the intent of the Type 2 designation to the Program Manager.
+Any ‘Applicable’ document listed in a Type 2 document is also considered to be Type 2 unless specified otherwise.
+The Element or Module will assess equivalency of the requirements and risk to the Program and present the evidence to the NASA TAs and Program Manager for approval.
+The process for accepting alternates is defined in DSG-PLAN-007, Gateway Systems Engineering Management Plan, Section 5.5.8 Standards.
+Type 3 documents are those that represent the ‘best practices’ observed by or normally used by NASA over the substantial development history of both human and non-human spaceflight missions.
+The Program does not need to either formally adopt the documents or recommend an alternate.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+The following documents contain supplemental information to guide the user in the application of this document.
+These may be called out in section 3.2 rationale or other areas of the document.
+This document may only be released according to the Destination Control Statement on the front cover.
+In the event of a conflict between the text of this specification and the references cited herein, the text of this specification takes precedence.
+Nothing in this specification, however, supersedes applicable laws and regulations unless a specific exemption has been obtained.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway is a reusable and sustainable command center in Lunar orbit, providing a safe location for crew transition to a lunar landing vehicle after checkout.
+The Gateway also provides a location for deep space human and systems testing as a stepping stone to Mars exploration.
+Phase 1 – Initial complement of modules needed to support BOTM 2024, Power Propulsion Element, Minimum Habitation Capability & Logistics Module.
+Phase 2 – Remaining elements of the architecture to support longer duration missions and greater utilization capability, International Habitat, US-Habitat, Airlock and Extravehicular Robotics.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway is a lunar orbiting facility, which is supported with consumables, maintenance items, and experiments.
+The Orion spacecraft will bring crews to the Gateway and return them to Earth once the mission is completed.
+The Gateway will employ radio-frequency (RF) links with Earth based networks for audio, video, data, and command communications.
+The Gateway functional breakdown is described below.
+The PPE provides the capability to generate power for the Gateway, transport Gateway between cis-lunar orbits, perform orbital maintenance, provide attitude control for the Gateway in multiple configurations, provide communication (to and from Earth, space to space communication, space to lunar communication, and relay EVA communication to Earth), and also provides accommodations for external utilization.
+The MHC provides the capabilities for early habitable utilization of the Gateway, such as internal and external payload accommodations, external robotic interfaces, power and thermal control, oxygen/nitrogen supply and air circulation, and logistics storage for crew consumables.
+The EVR provides the capability to deploy and retrieve external utilization payloads, utilize the science airlock to retrieve/deploy payloads, deploy free-flying payloads, inspect the Gateway system, capture and berth/unberth of robotic spacecraft, berth and unberth modules to support assembly and reconfiguration if needed, support lunar and planetary missions by assembling spacecraft and transferring equipment, perform scheduled and contingency maintenance including by transferring ORUs to the interior via the science airlock, support self-maintenance of robotic components and support EVA crewmembers.
+The EVR nominally performs its tasks autonomously so that it can operate any time that it is required, without crew presence, without a guaranteed ground downlink and without real-time ground supervision.
+The EVR will be delivered on a LM and be able to be activated and walk off onto Gateway by remote ground commanding and without EVA assistance.
+The External Robotics will have the capability to translate along the Gateway infrastructure, by walking to grapple fixtures placed externally along the Gateway modules.
+The HABs are where the astronauts will live and work.
+With the intention of using the Gateway as a technology demonstration activity to enable future, more ambitious missions, the HABs provide life support for the crew to perform science/utilization, maintain and conduct crew health and performance/medical operations, as well as pressurized cargo and logistics stowage.
+Habitation functionality will be distributed across the MHC and two HABs.
+The Gateway will have two HAB modules: an International HAB (I-HAB) and a U.S. HAB (US-HAB).
+This document may only be released according to the Destination Control Statement on the front cover.
+I-HAB will be the habitation element provided by the International Partners.
+Allocations of the habitability functions between the pressurized volumes will be adjusted as the architecture matures.
+The US-HAB will be the U.S.-provided habitation element that, together with the I-HAB, provides the primary habitability functions for the Gateway.
+The Airlock provides the capability to enable crewed EVAs, accommodate EVA suit/tool storage, accommodate pre-EVA checkout and preparations to includes pre-breathe protocols, accommodate post-EVA activities, as well as accommodate demonstration of future EVA technologies.
+The LM provides the capability to deliver pressurized and unpressurized cargo to the Gateway enabling extended crew mission durations, science utilization, exploration technology demonstrations, potential commercial utilization, system outfitting, and other necessary supplies.
+LMs may or may not be permanent fixtures of the Gateway and will depend on individual module configurations.
+When provided as a commercial resupply service, LM's are expected to be fully independent spacecraft with their own propulsion, power, thermal control, GN&C, and communications systems during undocked mission phases.
+When docked at Gateway, LMs extend specific Gateway functions to support crew systems, integration with the Gateway command and control systems, communication, and habitation, but still retain some independence for power generation, thermal control, and spacecraft systems management.
+Potential visiting vehicles, other than LM, are being defined at this time but could conceivably include robotic and human lunar landers (HLLs) as well as crewed vehicles built by NASA and International Partners.
+This document may only be released according to the Destination Control Statement on the front cover.
+The requirements contained within the NPR prescribe that a human- rated system accommodates human needs, effectively utilizes human capabilities, controls hazards with sufficient certainty to be considered safe for human operations, and provides, to the maximum extent practical, the capability to safely recover the crew from hazardous situations.
+Formal Human Rating certification will be obtained for each integrated architecture/mission (including Gateway Modules and the docked crewed vehicle) prior to each crewed flight.
+The Human Rating Certification Package (HRCP) is the documentation of compliance/evidence for the NPR outline human rating progress and compliance that will occur at various stages of maturation as the Gateway is assembled (content in the annexes will not be part of the endorsed/certified package; it is informational only).
+Lastly, the HRCP will include the NPR requirements trace and applicability matrix, by mission.
+The status of the HRCP will be provided at key Gateway milestones with its content and format evolving along the way.
+Deliverable expectations (for the HRCP as well as those products owed to the HRCP by Programs and Elements) will be provided along with progress of each deliverable.
+The actual HRCP document will not be complete and ready for endorsement until all compliance evidence expected for assessment is received.
+This section provides general design considerations and descriptions for the Gateway.
+The content contained within this section is not formally verified, but in many cases it is complementary to and influenced by verifiable requirements found in Section 3.2 of this document, and other Level 2 requirements.
+The considerations are derived from the unique mission of the Gateway and the unique natural and induced environments the Gateway will experience.
+Adherence to these considerations and ground rules are important to ensure the Gateway can perform the intended mission and endure the expected lifetime while providing a habitable productive environment for the crew.
+In the case of any apparent conflicts between content in Section 3.1 and requirements housed in Section 3.2 or other requirements documents, requirements shall supersede Section 3.1 content.
+Each Gateway module should be capable of storing power, receiving/distributing power, controlling temperature, and providing Command and Data Handling (C&DH) independent of other elements.
+Gateway should have a system architecture that allows sharing of resources (to include power, thermal control, C&DH, and Environmental Control and Life Support (ECLS) for pressurized modules) across module interfaces.
+The Gateway will be assembled in cis-lunar space at a planned cadence of one flight per year.
+Therefore, each Module should be as self-contained as practical and each on-orbit stage must result in a sustainable spacecraft.
+In addition, power storage and temperature control will be needed by the module from launch to activation to keep the module within allowable temperature limits.
+The purpose of independence and sharing resources provides the capability to respond to real time on-orbit anomalies and failures.
+This document may only be released according to the Destination Control Statement on the front cover.
+Sharing of resources may be needed to recover from a loss or diminished resources in one module being supplied from an adjacent module.
+Gateway modules should be designed to be assembled primarily by automated docking with automated deployable mechanisms.
+External robotics will be used for external payload installation and removal.
+Rationale: Initial assembly missions may not have crew available to support assembly tasks while external robotics capability is also not expected to be available for early missions.
+EVA capability is reserved for contingency maintenance and will not be available until late in the assembly timeframe.
+The Gateway should be designed with the –Z surface clear of structure, including planned Visiting Vehicles (VV), to avoid communication blockage.
+Rationale: Based on the initial Gateway reference architecture, the planned Near-Rectilinear Halo Orbit (NRHO), and the planned Solar Pressure Equilibrium Attitude (SPEA), the –Z surface of the Gateway is the optimal location for High Gain Antennas to support lunar and Earth communications.
+This assumes the –Z axis is nominally directed towards ecliptic north.
+Placing additional primary structure or secondary structure on the existing configuration could result in structural blockage of the communication line-of-sight.
+The origin is located at the center of the PPE forward docking interface at the center of the docking mechanism Hard Capture Surface (HCS).
+Active and Passive thermal systems should be designed with enough robustness and capacity to allow Gateway to fly in attitudes that are driven/support operations for extended periods.
+This document may only be released according to the Destination Control Statement on the front cover.
+This is achievable using body mounted radiators if there is enough surface area for the required radiators.
+Radiators are most effective in rejecting heat when pointed towards deep space because they are not subjected to the heat radiated from the Moon or Earth.
+In the NRHO at the SPEA orientation, the surface area of Gateway that is facing deep space and the surface area facing radiation from the Moon and/or Earth changes over time.
+Therefore, to meet the thermal attitude independence, the Gateway will need radiators on each face of the external surface.
+Window(s) and secondary structure for other systems, such as Low Profile Grapple Fixtures (LPGFs), Small Orbital Replacement Unit (ORU) Interfaces (SORIs), EVA translation aids, GNC sensors, batteries, propellant lines, etc.
+In determining the location of external secondary structure, preservation of surface area for thermal radiators should be considered.
+Gateway should be designed to accommodate autonomy (as implemented by Vehicle System Manager (VSM), Intravehicular Robotics (IVR) and Extravehicular Robotics (EVR) systems) to the greatest extent practical.
+The Gateway will operate in cis-lunar space with infrequent, short periods of on-orbit crew.
+The Gateway has a requirement to sustain a period of uncrewed operations for three years and then return to a state ready for resumed crew operations.
+EVR, IVR, and VSM will provide unique capabilities that provide reduced Earth reliance for future missions.
+EVR and IVR services can be utilized during all phases (crewed, non-crewed) and will support operations, maintenance, and utilization.
+Gateway will largely be an uncrewed vehicle, making robotics essential systems for utilization.
+The Gateway design should be resilient to contamination from lunar regolith.
+The Gateway dust mitigation strategy will be to limit dust from arriving at Gateway by placing constraints on lunar excursion vehicles.
+However, it is anticipated that dust cannot be completely eliminated, so Gateway should protect for meeting performance requirements when exposed to lunar dust.
+As the lunar enterprise campaign continues, the Gateway Program will develop quantitative requirements for the expected induced environment on Gateway and corollary requirements to levy on visiting vehicles to constrain the amount of dust that enters the Gateway environment.
+At that time, this design consideration will be replaced with quantitative requirements.
+Internal Architecture is the methodology and design for outfitting a habitable volume to accommodate systems and humans while meeting mission objectives.
+A consistent, well-planned architecture will maximize volume efficiency, enable and enhance crew health and performance, and promote the extensibility of the spacecraft to meet future capabilities and mission requirements.
+This document may only be released according to the Destination Control Statement on the front cover.
+A successful approach will employ commonality in orientation across pressurized elements, lighting techniques that enhance the living space, and clear and unencumbered translation paths to optimize movement.
+The architecture must provide solutions for securing equipment and stowage, so that crew can interact with it.
+These solutions should anticipate reconfiguration and growth and provide a development strategy that protects the quality of the architecture as the space evolves.
+For example, a crew workstation may be initially hosted in I-HAB and might be moved at a later stage or supplemented by additional workstations in US-Hab.
+Habitability is the extent to which a space is suitable for human life and it should be a prime consideration in the design of all vehicles, habitats, and hardware used by a crew.
+Habitable volumes will provide an atmosphere for the crew for all nominal missions.
+Functional allocation is the distribution of tasks, capabilities, and volumes within a habitable element or set of habitable elements.
+This distribution drives the flow of traffic, which can dramatically affect the architecture.
+Complimentary tasks should be co-located and antagonistic tasks should be separated.
+Functional areas should be separated for tasks that could degrade emergency response or safety, or that produce environmental conditions detrimental to mission performance or habitability (for example, glare, noise, vibrations, heat, odors, etc.).
+The relationship between tasks should be examined with respect to suitable compatibility, cleanliness, visual and auditory privacy, resource needs, and translation.
+Gateway should establish a human-based frame of reference across the entire vehicle that enables the crew and ground to identify and communicate about locations within the system at any given time.
+The internal living space should provide adequate habitable volume to perform the expected functions and to translate through the space.
+A clear, unencumbered translation path should be defined and maintained to facilitate the performance of mission tasks.
+Working and living spaces intended for crew occupancy should be intuitive and aesthetically pleasing to facilitate human productivity and mission productivity.
+Colors, textures and lighting provisions should be chosen to support the functions intended for each working or living space, and, when used to provide visual orientation cues, should be capable of consistent throughout all habitable areas.
+Lighting is an essential element of architecture that should be leveraged to help crew use the space.
+It should be designed to complement the architecture.
+This document may only be released according to the Destination Control Statement on the front cover.
+Acoustics should be managed to reduce hearing problems or annoyance, minimize unnecessary disruption to crew work and habitation functions, not inhibit speech communications, and ensure the detection and appropriate conveyance of urgency of auditory cautions, warnings, and alerts.
+Outfitting refers to hardware and soft goods installed in the pressurized elements.
+All mechanical systems outfitted for launch should be accessible and maintainable by the crew.
+The need for secondary structure should be minimized in order to reduce element mass.
+The outfitting approach should be modular to accommodate reconfiguration and interoperability between elements, and it should be extensible to accommodate growth in equipment, systems, and stowage.
+Growth, including the addition of stowage and outfitting, should not compromise the clear and unencumbered translation path and living space.
+Spacecraft scalability should consider non-obstructive cable/hose routing so as to maintain translation paths that are free of entrapment (tangles, snags, catches, etc.
+The design of the interior should have features that manage the addition of equipment cables and hoses without intruding on the living and translation space.
+For hardware that can restrain or restrict the crew, that hardware should allow for quick (guideline of 30 seconds) and sufficient crew egress from that apparatus such that the crewmember can don an emergency breathing apparatus and/or an emergency entry suit if required.
+All outfitting required to be installed on orbit, removed for return or disposal, or transferred between elements should be designed to fit through the smallest corridor.
+Payload and stowage mounting and resource interfaces should be standardized across all elements allocated those functions.
+Radiation exposure should be mitigated by vehicle design and operational approaches.
+During radiation events, if thresholds are reached, crewmembers would seek shelter in higher shielded locations of Gateway in order to minimize exposure.
+Design considerations should be given to providing the radiation safe haven protection as part of the habitable volume, ideally as part of the crew quarters location.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway should include supportability and maintainability as part of the system's design characteristics.
+Designing for supportability and maintainability assists in ensuring system life- cycle availability and affordability.
+To assist with supportability, Gateway should strive for highly reliable systems to minimize maintenance.
+When external maintenance is required, the Gateway strategy is to use robotic capability first, while crewed and uncrewed, and use contingency EVA capability as a backup.
+The Gateway should have modular hardware designs that reduce hardware to smallest replaceable unit and utilizes common component/system interfaces that allow items to be interchangeable between modules/elements.
+Modularity requirements early in design will pay off in life cycle by reducing resupply weight and enabling commonality across modules at the lowest level practical in each system.
+Interchangeable elements will minimize the number of unique spares required.
+The Gateway should be maintainable and reconfigurable on-orbit using a minimum set of tools and fasteners that are as common as feasible with the other systems.
+It is understood that exploration missions beyond LEO will be particularly mass and volume limited.
+There will not be the ability to provide a tool kit that consists of over 500 unique tools like on the ISS.
+Additionally, common tools reduce the training and support requirements for the system.
+For those reason, providers of spacecraft, spacesuits, EVA tools, scientific payloads, IVR and other hardware will need to design their hardware to be maintained by a smaller set of common tools.
+Under this Common Tools umbrella are two parts: the IVA Tools and EVA Tools.
+There would be an IVA Tool Kit with a limited set of tools to perform maintenance on any hardware inside the habitable volume and will drive IVR end effectors.
+This includes maintenance of the spacesuit, EVA Tools, payloads, replacing spares, hatch operations or anything else that is stowed or brought into the habitable volume.
+There would also be a limited set of EVA Tools designated to be used for maintenance on any hardware outside of the habitable volume, such as an external antenna, solar arrays, a rover, or an external science payload.
+As a goal, Gateways should design all components and assemblies to utilize the Common Tools and Fasteners lists identified in the DSG-SPEC-CS-006, Gateway Program Subsystem Specification for Crew Systems for IVA tools/fasteners and the DSG-IRD-EVA-008, Gateway Program EVA Compatibility IRD for EVA tools/fasteners, though it is understood that it will not be practical 100% of the time.
+However, the intent of this requirement is that all planned maintenance and contingency tasks must be carried out using this Common Tools Kit.
+Any designs that create the need for an additional tool outside of this set of tools should be routed through the appropriate Program Control Boards for approval.
+The Gateway should provide for upgradeability which should allow technology infusion as well as address obsolescence issues.
+Upgradeability will be necessary in the future to support exploration needs such as Lunar and Mars exploration activities.
+Upgrades should be considered through initial and follow-on phases of the program and include commonality to identify and recommend potential supportability enhancements such as identical interfaces, interchangeable parts, common tools, and interoperable items that can be used in different modules.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway should establish operational availability consistent with mission objectives.
+Operational availability (Ao) is achieved by implementing highly reliable systems and incorporating common and modular hardware designs that consider ease of maintenance.
+For Gateway, there will be times when operational availability is required to be at the highest possible level for manned operations (for example, to support surface operations) and perhaps to a lesser degree for unmanned operations.
+Operational availability (Ao) typically relies on allocation of hardware reliability for inherent availability (Ai), reliability centered maintenance (RCM) (or preventative maintenance) for achieved availability (Aa), and the logistics/maintenance support infrastructure to achieve the designated requirement for Ao.
+Additional detail is captured in the Gateway Integrated Logistics Support Plan (ILSP), DSG-PLAN-020.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall be capable of launching modules on a commercial launch vehicle or as a Co-manifested Payloads (CPL) on the Space Launch System (SLS).
+Rationale: Having a commercial launch vehicle & SLS, keeps trade space open for a robust assembly sequence, and protects for development issues with co-manifesting, extended flight suspension of SLS or Orion, etc.
+The Gateway modules will be launched to assemble the Gateway in Cis-Lunar Space.
+The Gateway shall use docking systems compliant with the DSG-SPEC-MECH-017 Gateway Program Docking System Specification.
+Rationale: All docking ports shall utilize common design to support interoperability.
+The Gateway shall have a minimum of four Gateway Docking System compliant docking ports available for non-permanent use in any combination of radial or axial configurations.
+Rationale: Accommodations include allocation of ports to the PPE and to support habitation, logistics resupply, airlock capability, extensibility options, and crewed vehicle contingency docking.
+These modules will deliver supplies and utilization systems to the Gateway, as well as the capability to resupply, refuel, and dispose of trash.
+Pressurized and unpressurized logistics should be accommodated.
+It could also include docking of a HLL or additional HABs providing communications, thermal, power, orbit maintenance and attitude control.
+As required, assessments will be performed for each new module.
+Implementation of the DSG-SPEC-MECH-017, Gateway Docking System Interface Definition Document will ensure interoperability of docking systems for all modules regardless of module provider.
+Rationale: A SEP system that is extensible to future human deep space exploration missions will be demonstrated on the Gateway.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: Orbit trade studies, cited in DSG-DDD-002 Gateway Mission Design Document (MDD), identified a Near-Rectilinear Halo Orbit (NRHO) as optimal for minimal energy orbit maintenance, and accessibility to multiple deep space destinations.
+Specifically, an L2 orbit in a 9:2 resonance with the lunar synodic period with apolune over the South Pole was selected for extended lunar communications with surface assets at the South Pole.
+The Gateway shall be capable of performing a single round trip transfer to Distant Retrograde Orbit (DRO) and back within 11 months.
+Rationale: A series of robust uncrewed capabilities, in diverse cis-lunar orbits, will reduce risk, maximize closure of knowledge gaps, and prepare for operations beyond the Earth- Moon system.
+The transfer is assumed to occur with a fully- constructed stack, not including logistics modules, crew visiting vehicles, or lander elements (IAC-3 configuration 14).
+The targeted DRO will remain stable for 3 months for cislunar transfer applications.
+The DRO will remain stable for 100 years for Gateway End-of-Life applications.
+The Gateway shall provide a fuel capacity that would support performing a minimum of two round-trip uncrewed low-energy cislunar orbit transfers between a near-rectilinear halo orbit (NRHO) and a distant retrograde orbit (DRO) and orbit maintenance for a period of 15 years between refueling <TBR-HEOR-002>.
+Rationale: A series of robust uncrewed capabilities, in diverse cislunar orbits, will reduce risk, maximize closure of knowledge gaps, and prepare for operations beyond the Earth- Moon system.
+For this purpose, the selected NRHO is a nearly stable 9:2 lunar synodic Earth-Moon Lagrange 2 (EML2) halo orbit with perilune passage around 3300 km (TBR), while the selected DRO is a highly stable Earth-Moon orbit that averages 70,000 km in distance from the Moon entirely in the Earth-Moon plane (0-degree inclination) and appears retrograde in motion to the Moon <TBR-HEOR-002>.
+These transfers could occur between the selected NRHO DRO, another EML2, or another NRHO orientation (such as NRHO North to NRHO South) between refueling depending on mission needs.
+Rationale: Minimum lunar flyby altitude is needed to constrain proximity to the moon in the case of uncertain conditions in performance of maneuvers to ensure lunar impact is avoided and to limit thermal concerns.
+The minimum altitude is an instantaneous occurrence as the trajectory is propagated toward and away from the moon.
+The reference trajectories are defined in detail in the MDD.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall operate in an orbit that limits the time during perilune passage, below 10,000 km but not lower than 1500 km altitude, above the lunar surface to less than 8 consecutive hours.
+Rationale: Minimum Lunar distance is required to ensure orbit maintenance capability and needed to define natural environments for thermal and power systems, and lunar observation opportunities for utilization.
+Depending on the NRHO targeted, the minimum altitude can vary.
+The closest approach will be for a short period of time which can be used to constrain thermal needs.
+Low Lunar Orbits (LLO) are not planned because Orion cannot reach LLO and Gateway costs and technical challenges are significantly higher for orbit maintenance, power, communications, and thermal constraints.
+The reference trajectories are defined in detail in the MDD.
+The Gateway shall provide a mission life capability for each module of at least 15 years after deployment.
+The 15 year Gateway life is needed to accommodate the mission flight rate for the buildup of the Gateway, the time necessary to test and demonstrate the deep space capabilities, to support to various science objectives, and to allow the uncrewed Gateway operations to facilitate successive crewed Mars missions and sustain mission cadence.
+Gateway will perform science, commercial, international and exploration activities during deep space expeditions.
+The Gateway life in remote cis-lunar space will drive the design for robustness, durability, and maintenance concepts that take into account limited logistics and onboard spares volume.
+These design drivers for long life in remote locations and harsh environments will be shared with the needs for the Gateway and will therefore also provide experience to support the deep space development.
+During the course of the Gateway lifetime, service life extension assessments will be performed on each element to continue safe and reliable operations of Gateway well into the Phase 3 plan sequence.
+The Gateway shall support a crew of two, three, and four.
+The Gateway is intended to be a test bed to increase crew duration, demonstrate technologies, systems, and operations in deep space.
+The Gateway will nominally support a crew of four on a minimum 30-day mission once propulsion, habitation and sufficient logistics have been aggregated in cis-lunar space.
+The visiting crew vehicle(s) may not always fly four crew and in that scenario, the Gateway needs to be capable of operating with a minimum of two crew.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall accommodate crew for a minimum of 30 continuous days independent of visiting crew vehicle's systems and consumables.
+The Gateway is intended to be a test bed to increase crew duration in deep space.
+Gateway will support a crew of four on a minimum 30-day mission once propulsion, habitation and sufficient logistics have been delivered to cis-lunar space independent of the visiting crew vehicle(s).
+This establishes the first incremental increase in deep space crewed duration beyond the VV's capability.
+Gateway stack configurations lacking a fully outfitted habitation module are not intended to meet this requirement.
+The Gateway shall be capable of uncrewed operations for up to 3 continuous years <TBR- HEOR-001> without resupply.
+Rationale: When uncrewed, the Gateway will perform operations via a series of robust autonomous capabilities that will reduce risk, maximize closure of knowledge gaps, and prepare for missions beyond the Earth-Moon system.
+These operations may include performing systems diagnostics and repair, logistics and consumables stowage, exploration capability testing, aggregation of robotically returned destination surface samples, science measurements and operations, communications relay, lunar vicinity mission support, etc.
+The Gateway shall remotely transition from an uncrewed state to accommodate a safe crew ingress.
+The Gateway must survive for long periods without crew such that, prior to the next crew arriving, any actions required to prepare the stack can be performed so that the Gateway is safe and habitable upon ingress.
+The Gateway SLS Co-Manifested modules shall have a launch mass not exceeding 9000 kg.
+Rationale: Based on SLS performance allocation to Gateway CPL as documented in DSG-GRA-004, Cross Program Groundrules and Assumptions (GR&As) for Analysis and Development.
+Gateway control mass allocation does not need to account for the SLS Payload Attach Fitting (PAF).
+The control mass must account for Gateway Mass Growth Allowance (MGA), Maturity Estimate Reserve (MER), and Program Manager’s Reserve (PMR) as documented in DSG-PLAN-002, Gateway Margin Plan.
+The Gateway shall have module launch masses not exceeding those in Table 3.2.3-1, Gateway Element Launch Masses <TBR-L2-GW-004>.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Table 3.2.3-1 defines the launch masses for each module and supporting systems.
+Allocations in Table 3.2.3-1 include MGA and MER in accordance with the Gateway Margin Plan and are independent of the Launch Vehicle chosen.
+The Gateway shall protect far side of the moon as a unique radio science location.
+Rationale: Gateway – Lunar communications will need to comply with International Telecommunication Union (ITU) Protection of Frequencies for Radioastronomical Measurements in the Shielded Zone of the Moon, Rec.
+ITU-R RA.479-5 as d in the International Communication System Interoperability Standards (ICSIS).
+The Gateway shall operate internal systems, required to maintain control of the Gateway, during and after exposure to pressures from nominal operation pressures down to zero psi, within <TBD-L2-GW-003> minutes (or a depress rate), for a duration up to <TBD-L2-GW-004> hours.
+Rationale: Critical Avionics and Power Hardware must be able to survive and operate over a full range of pressure, from standard upper operating design spec pressure through a transition to partial pressures down to zero.
+This implies that those units need to be conductively cooled and designed for the range of temperature and environment changes, such as designed to address corona concerns, humidity changes, etc.
+Non-critical items such as payloads as well as potential non-critical air cooled electronics are assumed to be powered off during a depress transition.
+The Gateway shall accommodate automated delivery of logistics cargo and payloads.
+Rationale: Accommodating automated delivery encompasses the Logistics visiting vehicle having the capabilities to arrive and dock with an uncrewed Gateway.
+The Gateway and the logistics module must have the necessary capabilities to access and transfer internal and external, cargo, payloads, ORU’s, etc., that were delivered etc.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall allow for safe disposal of the on-orbit Gateway, to preclude the generation of space debris, at the end of its useful life.
+Rationale: Consideration of the method of disposal during design will ensure required resources and functions are available.
+Safe disposal is important to protect future exploration environments and destinations.
+The Gateway shall comply with applicable requirements in DSG-SPEC-GNC-009, Gateway Program Subsystem Specification for Guidance, Navigation and Control (GNC).
+Rationale: GNC will be implemented across the Gateway to ensure proper flight dynamics and orbits meet Gateway objectives.
+Requirements specific to Gateway GNC are documented in the subsystem specification for GNC.
+The specification levies GNC requirements applicable to two or more modules, identifying each requirement’s module allocation.
+The Gateway shall manage the mass properties for the integrated stack, from initial deployment through operational capabilities for the purposes of bounding the center of mass, moments and products of inertia and total mass to enable integrated stack rotational and translational control.
+The Gateway GNC needs to have a mass property limits to enable requirements verification and vehicle dynamics analysis.
+The Gateway shall change the Gateway attitude to any orientation (as needed) to meet operational constraints for all configurations.
+The main drivers requiring attitude deviations from solar pressure equilibrium attitude (SPEA) are for orbit maintenance maneuvers, crewed operations with Orion such as docking events where the Gateway is the passive vehicle, and for the Orion tail-to-sun requirement.
+The Gateway shall provide integrated attitude control services for the integrated stack.
+Rationale: Operational concept derived requirement for a single entity to perform the attitude control of the integrated Gateway Stack (including docked VVs).
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall acquire and process navigation data onboard to determine absolute position/velocity without communications with the earth.
+Rationale: Gateway must determine navigation state (position, velocity, attitude and attitude rate) without communications with the earth.
+Requirement L2-GW-0044 states Gateway must be able to operate for 21 days without ground communications, driving the Earth independence requirement.
+The Gateway shall incorporate an Absolute Attitude Determination capability.
+The absolute attitude determination system design requires provision for the spacecraft to estimate the vehicle's attitude and attitude rate in inertial space.
+The Gateway shall incorporate an Absolute Navigation State Determination capability.
+The absolute navigation state determination system design requires provision for the spacecraft to estimate the vehicle’s position and velocity in inertial space.
+This can be achieved autonomously or with updates from ground based systems.
+The Gateway shall provide integrated vehicle translational control for the integrated stack.
+Rationale: Operational concept derived requirement for a single entity to coordinate the maneuvering of the docked modules (including docked VVs), from one location in space to another location.
+Translation control includes Gateway orbit maintenance.
+The Gateway shall control attitude and attitude rates, within <TBD-L2-GW-001>.
+Rendezvous, Prox-Ops, and Docking (RPOD), science observations, communication with Earth and/or Lunar asset, and transfers within cislunar space.
+The Gateway shall limit maximum magnitude of linear rigid-body acceleration at the integrated stack center of gravity during integrated vehicle translations to 0.1g.
+Rationale: Gateway accelerations need to be bounded.
+External robotic systems specify a maximum of 0.1g to minimize impacts to robotic elements.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall support autonomous docking, undocking, berthing, and unberthing of Visiting Vehicle and modules while there are no crew present on the arriving/departing module or Gateway.
+Rationale: Launch cadence for vehicles should not depend on crew being present on board the Gateway since this would impose undue time and programmatic constraints.
+Autonomous vehicle operations reduces mission risk, conserves valuable Gateway crew time, and provides important capabilities needed for science utilization and future exploration.
+The Gateway shall provide docking targets as defined in the DSG-SPEC-GNC-009, Gateway Program Subsystem Specification for GNC.
+The chaser vehicle will utilize the targets on the docking mechanisms to perform rendezvous, proximity operations and docking, or while station keeping in the “capture box”.
+The Gateway shall be on-orbit refuelable for both Xenon and Hydrazine propellants.
+The Gateway will have refuel capability incorporated via DSG-SPEC-MECH- and RCS propellant.
+The refueling capability will provide robustness and flexibility of cis- lunar operations.
+Additionally the PPE has a commercially provided refueling capability on the aft end of the vehicle.
+The Gateway shall use a monopropellant hydrazine propulsion system.
+The specification of the propellant allows for clarity in the fluid interface between PPE and the docking mechanism.
+The use of monopropellant hydrazine also simplifies the PPE tanks liquid acquisition device and gauging or flow measurements.
+Use of bipropellant nitrogen tetroxide limits the commercial options for acquisition devices and introduces saturation issues.
+In addition, the use of hydrazine reduces plume contamination concerns that bi-propellants would introduce into a Gateway environment.
+The Gateway shall comply with applicable requirements in DSG-SPEC-COMM-005, Gateway Program Subsystem Specification for Communications.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: An integrated Gateway Communication System will be implemented across Gateway to provide the communication capabilities for Gateway and Gateway utilization functions.
+This includes communications between Gateway and Earth, Gateway and Visiting Vehicles, Gateway and Lunar Systems, Gateway and EVAs, wireless communications, and intra-Gateway networking between Gateway modules.
+The Gateway Program Subsystem Specification for Communications defines the specific functionality required from the different communication system to enable the capabilities, support interoperability and be compatible with other communication systems and infrastructure assets (example: Deep Space Network).
+The Gateway shall incorporate modular, reconfigurable communication systems to support expandability and extensibility for additional capabilities.
+Rationale: Exploration communication systems will need to support multiple signal formats, data rates, network management scenarios and interface with different ground and space assets during the various mission phases.
+The signal formats, standards and capabilities will also evolve over the life of the mission and the system will need to support these upgrades.
+In addition, accommodation for demonstration of technologies leading to operational systems, like optical communications, needs to be provided.
+The Gateway shall comply with spectrum selection/allocation, certification, and usage restriction policies set forth in NPD 2570.5, NASA Electromagnetic (EM) Spectrum Management Document.
+The National Telecommunications and Information Administration (NTIA) regulates the licensure and use of RF spectrum for U.S. Government systems.
+Allocations of frequency spectrum for U.S. Government systems, including NASA, are managed by the NTIA.
+The Gateway shall implement security functions and controls for a high potential impact system utilizing NIST Special Publication 800-53, Security and Privacy Controls for Federal Information Systems and Organizations or approved international equivalent.
+Rationale: Gateway needs to secure systems based on the security assessment and controls.
+The Gateway shall provide spherical coverage for the different mission phases and links, excluding non-Gateway structural blockage, as given in Table 3.2.6-1, Data Download Volume to Earth <TBR-L2-GW-018>.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: Gateway will need to provide communications coverage for critical mission phases and links involved.
+The particulars of the link, including data rates, protocols, etc.
+The Gateway shall communicate with Earth for data exchange and radiometric tracking.
+Rationale: Gateway communications with Earth enables data transfer between Earth and the Gateway (including commands, file uploads, telemetry, engineering and science data, voice, video and images, and crew-related data), as well as supports tracking and position determination of the Gateway.
+The Gateway shall support a minimum of 3 simultaneous RF communication links.
+Rationale: Gateway will need to communicate simultaneously with VV, Earth and Lunar Surface Asset; or with Earth, EVAs, Lunar Surface Assets, etc.
+Therefore the Gateway will have to have the necessary architecture framework and communications resources to support 3 or more simultaneous RF links.
+The Gateway shall communicate with Earth without placing constraints on flight attitudes during nominal operations.
+The Gateway stack could be oriented in any direction in the ecliptic plane for any amount of time to support SEP operations or other objectives.
+This means that the Gateway communication system(s), during nominal operations, must be able to support communications with Earth in any flight attitude.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall support at least 7.49 Tbits per day (~935 GB per day) data downlink capacity to Earth.
+Rationale: Gateway will need to provide communication data downlink capacity to support science, payload, crew, etc.
+Specifying a total volume/day allows Gateway to: a. allocate and schedule the necessary network resources; b. determine data rates and coverage needed; c. determine onboard data storage needs.
+Rationale: Gateway to Lunar surface / Lunar orbit communication link will be used to communicate with Lunar systems and in conjunction with the Gateway -Earth link be used to relay data between the Earth and the Lunar systems.
+In addition, the Gateway-Lunar surface link could be used to “tele-operate” Lunar surface robotic systems.
+Gateway – Lunar communications will need to comply with ITU Rec.
+The Gateway shall support at least 1.62 Terabits (TBs) per day data transfer from Lunar Systems.
+Rationale: Gateway will need to support science, payload, crew, etc.
+Specifying a total volume/day allows Gateway to: a. allocate and schedule the necessary network resources; b. determine data rates and coverage needed; determine onboard data storage needs.
+The Gateway shall have the capability to communicate with at least 2 Lunar Systems simultaneously.
+Rationale: Lunar System assets will require command and telemetry links to execute command and relay data from their sensors and experiments to the Gateway.
+There may be more than one lunar surface or lunar vicinity system at any given time and will need to communicate with Gateway.
+Gateway will be able to communicate with 2 assets at any given time.
+The Gateway shall provide integrated communications services for all docked modules/vehicles.
+Rationale: Gateway will be capable of relaying bent-pipe communications from the ground to all docked modules/vehicles.
+Visiting Vehicles (VV), having their own comm link to earth, will also be capable of communicating directly with the ground while docked at Gateway.
+Gateway and these VV will pre-coordinate to ensure communication links don’t interfere with each other.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall communicate with Visiting Vehicle for data exchange and radiometric tracking.
+In addition, the radiometric tracking will provide range and range rate information to the VV’s GNC system to augment its navigation sensor information.
+To maintain compatibility with Orion rendezvous link, the ICSIS defines this link at S-band.
+The Gateway shall support direct voice communications between crewed spacecraft during proximity operations.
+Rationale: Direct voice communication means that the signal is not routed through mission control or another communication relay satellite.
+The Gateway shall provide an antenna and RF electronics connecting to visiting vehicles to provide communications coverage during RPOD.
+Rationale: For launch configurations that are co-manifested on SLS, the co-manifested modules obstruct Orion's crew module antennas.
+Having the co-manifested module provide antenna and RF electronics and connecting these to Orion's comm system will provide the necessary communication coverage between Orion and Gateway during RPOD.
+The Gateway shall provide internal and external wireless communications.
+Rationale: Gateway needs to support high rate data transfer between Gateway, robotic inspection cameras, robotic arms, EVAs, wireless sensors, payloads and other user applications.
+This data can also be relayed to Earth or other modules as needed.
+The Gateway shall support internal voice communications between Gateway crew and ground operators.
+Rationale: Crewmembers must maintain voice communication with ground systems during nominal and off-nominal activities.
+This document may only be released according to the Destination Control Statement on the front cover.
+Private voice communication with the ground during medical exams is considered nominal operations but may also be considered off-nominal.
+Other off-nominal events may require wearing a contingency breathing apparatus, which may hinder clear communication between crewmembers, which is essential during an emergency.
+The Gateway shall communicate with up to 4 EVA crewmembers.
+Rationale: Gateway needs to support emergency/contingency EVAs and part of that, Gateway will need to communicate with the EVA crew.
+The same EVA radio used on-board Gateway will be used for lunar surface operations.
+The requirement to support 4 crew is to ensure that the EVA radio is designed to handle 4 EVA crew to support surface operations even though the on Gateway there is no plans to have 4 crewmembers to go outside to conduct EVAs.
+The Gateway shall comply with applicable requirements in DSG-SPEC-VSM-003, Gateway Program Subsystem Specification for Vehicle System Manager (VSM).
+The Vehicle System Manager will be a system whose function is to manage the overall vehicle.
+As such, the VSM will need to interface with all modules and all systems.
+It is important that a common set of requirements exists to describe both the VSM itself as well as the interfaces to the VSM.
+Adherence to this specification will direct the controllability and compatibility of the Gateway and the VSM.
+The Gateway shall provide a VSM to manage the Gateway modules and coordinate with crew and ground controllers.
+Rationale: Coordinated control is needed on the vehicle level.
+Command hierarchy should be enforced to ensure proper and robust configuration and control of vehicle.
+Data must flow up to the VSM and the VSM must be the main vehicle control interface with human operators.
+Orderly flow of data and commands reduces complexity and increases robustness.
+Interfaces to this system to support situation awareness, system management, diagnosis, response planning, annotation, and retrospective analysis.
+The Gateway shall provide for autonomous operations for up to 21 continuous days independent of ground communications, with or without crew.
+Rationale: Gateway will be operated as both a crewed and uncrewed spacecraft, and will experience extensive resupply and communication constraints.
+This will necessitate the capability for autonomous operations.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway needs to provide autonomous vehicle control, nominal and off-nominal systems management, and utilization as well as providing essential system capabilities like data storage.
+More data on autonomous functionalities that will be necessary can be found in the VSM subsystem specification document.
+The Gateway shall curate data based on priorities and events.
+Rationale: Reduced bandwidth and lack of crew will challenge the situational awareness of ground operators.
+The Gateway VSM will manage the resource of bandwidth in order to provide the ground controllers with the best possible information.
+This will involve responding to priorities set by ground, crew, or events on board the Gateway.
+The curation of data must occur throughout the vehicle because of limited processing and network resources throughout the spacecraft.
+The Gateway shall comply with applicable requirements in DSG-SPEC-FSW-014, Gateway Program Subsystem Specification for Software.
+Rationale: Requirements specific to Gateway FSW are documented in the subsystem specification for software.
+The specification levies FSW requirements applicable to two or more modules, identifying each requirement’s module allocation.
+The Gateway shall transport data required for vehicle operations.
+Rationale: Data flow through the Gateway System ensures all modules and systems are receiving the information required to operate the vehicle and achieve objectives set forth in the Mission Plan.
+This includes, but is not limited to, delivery of commands, routing health & status data, providing fault data, and delivering reconfiguration data updates.
+This capability also includes delivery of data to and from the Ground.
+The Gateway shall capture data required for recovery of vehicle systems.
+Rationale: State data critical for recovery or restoration of Gateway systems ensures ongoing operation of the vehicle if a situation arises where a system must fault down, safe, and recover.
+When software secures data, it takes steps to ensure the data is correct in storage.
+As such, securing state data reduces the risk of an incomplete or insufficient recovery due to data integrity issues.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall detect, report, and annunciate faults for alerts, caution, warning, and emergency events to the on-orbit crew (IVA and EVA), lunar-surface crew, Earth (e.g. control centers), Visiting Vehicle, and/or autonomous operations.
+Rationale: Off-nominal events are usually divided into the following four categories to simplify training and user comprehension: emergencies, warnings, cautions, and alerts (action required events).
+During off-nominal events, crew attention should be directed to commensurate with the urgency of the situation and the use of multiple modalities, e.g., both visual and auditory, provides redundancy to ensure the attention of the crew; except for advisories, which may not have an auditory annunciation.
+Annunciation to crew shall include audible and visual notification.
+The Gateway shall be able to update executable Flight Software (FSW) and configuration data to support ongoing vehicle operations and configurations.
+Rationale: As the Gateway increases in capacity and capability, software updates will be required to meet changing objectives.
+Providing the capability to update all executable FSW and configuration data will provide flexibility.
+This capability allows the Gateway to stage software releases.
+Rationale: Three specific cases (a, b, c) are included as part of the requirement as written in the NPR 8705.2C, requirement 3.3.3.
+This capability will likely be implemented using a mission control on Earth.
+Logically, there will be times when the crew is unavailable to monitor, operate, and control the system.
+If the crew vacates one module of the system or transfers to another Human-Rated system as part of the reference mission, there is a capability for humans to monitor the unoccupied modules.
+In some of these cases, the crew may be able to perform this function from their new location.
+In other cases, mission control may perform this function.
+The Gateway shall have FSW that performs maintenance tasks to limit required periodic servicing of the software by ground and crew.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: FSW maintenance tasks include, but are not limited to, memory management, data storage management, application refresh, self-tests, etc.
+Given that communication with the Ground will be minimal and Crew visits infrequent, routine maintenance and servicing that keeps the software operating efficiently must be automated to eliminate dependencies on human operators.
+These self-maintenance tasks will be conducted with minimal to no impact on Gateway operations during crewed and uncrewed flight phases.
+The Gateway shall utilize the Core Flight Software (cFS) as the standard software framework.
+Any application developed as a cFS compatible software configuration item can be re-hosted on another module as long as processor capacity exists.
+The Gateway shall provide the capability to isolate and recover from faults identified during system development or mission operations that would result in a catastrophic event.
+The intent is to provide isolation and recovery from faults where the system design (e.g., redundant strings or system isolation) enables the implementation of this capability.
+Also, any faults identified during system development should be protected by isolation and recovery.
+However, it is acknowledged that not all faults that would cause catastrophic events can be detected or isolated in time to avoid the event.
+Similarly, system design cannot ensure that once the fault is detected and isolated that a recovery is always possible.
+However, in these cases, isolation of the fault should prevent the catastrophic event.
+The crewed Gateway shall provide the capability for the onboard crew to manually override software functionality when the transition to manual operation will not cause a catastrophic event.
+The intent of this requirement is to allow crew intervention of the crewed space system and/or subsystem software to perform operations that would nominally be automated, or when software design is incapable of responding appropriately or as desired to real-time events.
+While this capability should be derived by the program per requirement L2-GW-0310 Crew Monitor/Operate/Control Capability, the critical nature of software control and automation at the highest system level dictates specific mention in this requirement set.
+The displays and controls for manual intervention should be conveniently located, readily accessible, and intuitive for the intended task and its duration as long as the transition to/from manual operation is feasible and will not cause a catastrophic event.
+This document may only be released according to the Destination Control Statement on the front cover.
+The definitions in the Appendix for “Crewed Space System” and “Subsystem” provide guidance on the depth and breadth to which manual override capability should be provided.
+Identifying which specific automated functions require the crew override capability will be driven by task analysis with concurrence from the Gateway Program, the JSC Flight Operations Directorate and the Technical Authorities.
+The crewed Gateway shall provide the capability for the crew to manually control the attitude and translation of their crewed space system.
+The capability for the crew to manually effect changes in the attitude and translation of Gateway is a fundamental element of crew survival.
+The most robust satisfaction of this requirement is provided by direct manual flight control of the vehicle translation and attitude, through an independent flight control pathway (bypassing the affected vehicle guidance, navigation, and control system failures).
+A minimum implementation of manual flight control allows the crew to bypass the automated guidance of the vehicle by interfacing directly with the flight control system to effect any possible attitude or translation change/adjustment within the capability of Gateway’s design.
+Limiting the crew to choices presented by the automated guidance function is not a valid implementation of manual flight control.
+Safe operation requires accuracy of crew inputs to meet human rating requirements.
+Tools include, but are not limited to, telemetry, displays, video, instrumentation, and windows.
+Tools will be verified in a Gateway flight-like environment to ensure they are adequate to support manual control and operations.
+Rationale: This capability flows directly from the definition of human-rating.
+Within the context of this requirement, monitoring is the ability to determine where the vehicle is, its condition, and what it is doing.
+Monitoring helps to create situational awareness that improves the performance of the human operator and enhances the mission.
+Determining the level of operation over individual functions is a decision made separately for specific space systems.
+Specifically, if a valve or relay can be controlled by a computer, then that same control could be offered to the crew to perform that function.
+However, a crew member probably could not operate individual valves that meter the flow of propellant to the engines, but the function could be replaced by a throttle that incorporates multiple valve movements to achieve a desired end state (reduce or increase thrust).
+This document may only be released according to the Destination Control Statement on the front cover.
+The first condition recognizes that the crew performs functions to meet mission objectives and, in those cases, the crew is provided the designated capabilities.
+This does not mean that the crew is provided these capabilities for all elements of a mission.
+Many considerations are involved in making these determinations, including capability to perform the function and reaction time.
+The second and third conditions recognize that, in may scenarios, the crew improves the performance of the system and that the designated capabilities support that performance improvement.
+The Gateway shall comply with applicable requirements in DSG-SPEC-CDH-004, Gateway Program Subsystem Specification for Avionics.
+The Gateway Program Subsystem Specification for Command and Data Handling defines the specific functionality required of the Inter-module network system to enable top level capabilities, associated design standards, and module level functional and performance requirements.
+The Gateway shall comply with applicable requirements in DSG-SPEC-CHI-018, Gateway Program Subsystem Specification for Computer Human Interface.
+Rationale: DSG-SPEC-CHI-018 provides specifications for interoperability and commonality of Hardware and Software in the areas lighting, imagery (still and video), audio, displays, and controls.
+The Gateway shall provide a total of three TTE planes through each inter-module connector for redundancy.
+Rationale: Three separate cables must run between the elements in order to meet TTE fault tolerance specification.
+This is consistent with meeting the docking adapter data interface between modules.
+The Gateway shall incorporate a shared data storage system.
+The architecture must account for a capacity that considers the modules’ systems data and additional storage capacity that can be accessed and used by the Gateway.
+The overall capacity needed will be determined by assessing the mission configuration, module and systems data priorities, and anticipated operations.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: Top-level requirement to provide shared processing for Gateway system functions, imagery, internal robotics, crew health and performance, payloads, etc.
+Robot mass and power can be reduced if some of the processing can happen off board the robot.
+The Gateway shall provide crew displays and controls that are operable by a crewmember from within any habitable environment.
+Rationale: Crew capability (data/command interfaces) provides monitoring of the C&W as well as nominal and off-nominal control of life support, thermal control, communication, and other system functions necessary for safe operations from any habitable module.
+The Gateway shall provide internal lighting for the illumination required for all operational tasks dependent on visible light.
+Rationale: A wide range of crew and robotic tasks is expected to be performed within the vehicle.
+The required lighting levels vary depending on the task being performed.
+Examples of crew tasks include critical inspection and legibility, personal hygiene, telerobotics, and cleaning and maintenance.
+Examples of robotic tasks include inspection, localization, and object identification.
+The combined lighting system and architectural layout are a factor in the development of a usable lighting environment.
+During waking hours, lighting systems must provide the crew with retinal light exposure that is sufficient in intensity, optimal in wavelength, and implemented at the proper times and durations to entrain the human circadian pacemaker to a 24-hour day and facilitate schedule shifting.
+Effective lighting systems for internal operational environments support human/camera color vision within the appropriate chromaticity range, color accuracy, and allow for control, position adjustment, and glare prevention.
+Effective lighting systems for robotics have similar characteristics, although an additional consideration is the reduction in variations in lighting across locations or time as much as possible.
+The Gateway shall illuminate external surfaces <TBR-L2-GW-014> required for all operational tasks dependent on external visible light.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: Lighting is expected to be poor on the non-sun-facing surfaces of Gateway.
+Supplemental lighting is required in order for imagery to be acceptable.
+This is needed for EVA situational awareness and will be helpful for EVR operations.
+The Gateway shall comply with applicable requirements in DSG-SPEC-PWR-011, Gateway Program Subsystem Specification for Power.
+Rationale: An integrated Modular Power System will be implemented across Gateway to provide power to the Gateway systems, utilization, and visiting vehicles.
+The Gateway Program Subsystem Specification for Power defines the specific functionality required from the modular power system to enable the interoperability and compatibility of both the electrical power system and the electrical power consuming equipment across all Gateway power interfaces.
+The Gateway shall provide a minimum of 32kW for Gateway use when SEP is inactive.
+The Gateway will generate power for all elements including power utilized by the PPE itself.
+When the SEP is inactive there will be a minimum of 32kW available to transfer.
+It is expected that more than 32kW is available and can be distributed when both power domains are utilized.
+The Gateway shall conform to the DSG-SPEC-PQS-020, Gateway Electrical Power Quality Specification Requirements for 120Vdc.
+The Gateway will conform to the Gateway PQS for both the Electrical Power System and for the Electrical Power Consuming Equipment (EPCE).
+The PPE element itself is excluded from this requirement, but the power PPE provides to any Gateway equipment located on the PPE will conform to the Gateway PQS.
+The Gateway shall allow for full use of available array power.
+Rationale: While critical systems must be capable of running from a single power domain, more power above allocated limits is available when SEP is not being utilized or is running at low power.
+Both power domains are expected to operate simultaneously for all Gateway operations, but maintain an overall fault tolerant (FT) system operation.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall distribute primary power using two bi-directional power domains to each axial docking port.
+The Gateway primary power transmission from the PPE to the Gateway modules utilize bi-directional axial port feeds.
+This bi-directional power transmission allows module launch order independence and integrates the Gateway distributed battery system to be able to power the Gateway during eclipses and allows the distributed batteries to recharge.
+The Gateway shall implement a redundant 16kW bi-directional primary power pass-through to each radial docking port.
+The Gateway will provide redundant primary power transmission to each radial docking port to provide the adjoining (docked) Gateway element access to the over-all Gateway primary power.
+The bi-directional power transmission to each radial docking port allows element launch order independence with either Gateway HAB element and integrates the Gateway distributed battery system to be able to power the Gateway during eclipses and allows the distributed batteries to recharge.
+The radial docking port primary power system interfaces are redundant, meaning that in case of a single radial docking connector failure, the remaining docking connector has to transfer at least 16 kW.
+The bi-directional primary power interface at the radial docking port has been pre-defined and utilizes the high power docking Rectangular Umbilical Connector (RUC) with each high power RUC having one (1) utilized for grounding purposes or spares.
+The Gateway shall provide dc-isolation between the Gateway primary power domains and the secondary power domains.
+Rationale: To facilitate Gateway power quality verification without the presence of all Gateway modules and power consuming equipment within an integrated test, the Gateway will provide dc-isolation between the Gateway primary power domain and the secondary power domain of the applicable elements.
+This will allow independent power quality verification of all Gateway secondary loads and it will allow independent verification of the Gateway primary power.
+Source and load emulators will be required to verify the power quality between power interfaces.
+The Gateway shall be capable of operating critical systems off of a single power domain.
+The module-to-module primary power is redundant, meaning that in case of a single docking system connector failure, the remaining NDS connector has to carry the full limit of a single power domain.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall provide energy storage capacity capable of supplying a minimum of 32kW during non-insolation periods of at least 1.5 hrs.
+Rationale: Once a module is attached to the Gateway, that module's battery is part of the integrated Gateway primary power system and feeds all elements of the Gateway.
+Collectively, all the batteries have to supply power to the Gateway during non-insolation periods such as an eclipse.
+The overall Gateway battery energy is rated to maintain 32kW for 1.5 hours of nominal operations for all of Gateway's modules including Science.
+The 1.5 hours is based on a Lunar synodic resonance NRHO which will essentially eliminate the Earth shadow and keep the Lunar eclipses less than 1.5 hours.
+The Gateway shall provide a minimum of 24kW for system use when SEP is active.
+The Gateway will generate power for all elements including power utilized by the PPE itself.
+The 24kW electrical power value represents the minimum required continuous transfer power that is transferred to all Gateway electrical loads other than to the PPE housekeeping when the SEP is active and consuming up to 26.6kW.
+The Gateway shall adhere to the Program Element Power Allocation in Table 3.2.10- 1, Gateway Power Allocation and Table 3.2.10-2, EVR Power Allocation.
+The Gateway elements will be required to adhere to the Gateway Element Power Allocation Tables to prevent excessive power demands from over loading the PPE array.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall reserve a minimum of 4kW power for utilization use.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: Utilization needs to have a minimum of 4kW power reserved to support the various utilization and science objectives planned for Gateway.
+The Gateway shall be automatically booted to an operational and commandable state with the energizing of the Ground Support Equipment (GSE), or initial delivery vehicle, or the Gateway primary power interface.
+Rationale: First time power activation of the Gateway element or a restart after being completely deactivated will be accomplished by applying power to either the GSE, initial delivery vehicle, or Gateway primary power interfaces.
+Both of the elements power domains will be capable of independent activation.
+The start-up sequence will automatically energize the appropriate power and avionics equipment to get the element to a commandable state.
+The Gateway shall provide a Gateway standard power interface for internal portable electrical equipment including science and IVR.
+The Gateway will support the use of internal portable electrical equipment, science, and robotics by providing standard common electrical outlets that provide electrical shock hazard protection.
+The Advanced Modular Power System (AMPS) will provide variable voltage sources that may be incorporated into the elements Power Distribution Unit (PDU) that will then feed the standard panel interface for Portable Equipment.
+The Gateway shall comply with applicable requirements in DSG-SPEC-CHI-018, Gateway Program Subsystem Specification for Computer Human Interface.
+The Gateway shall provide imagery to support operations during all mission phases.
+The Gateway imagery system must include a capability to monitor internal and external activities and inspect internal and external equipment to support ground situational awareness of general operations, including vehicle condition, in-flight maintenance, utilization/science, and public affairs and outreach.
+The Gateway shall enable two-way private audio and motion imagery communication between the ground and crew.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: Gateway needs to provide for privacy during personal crew communications including private space, internal cameras, etc.
+The Gateway shall provide imagery and associated synchronized audio to the Crew.
+Rationale: Top-level requirement establishing the need for any Gateway-generated imagery (and associated audio, where applicable) to be made available to the crew.
+This requirement covers all imagery, internal, external, motion (video), and stills.
+Audio/Video Synchronization with the Gateway onboard clock can occur at the source or on the ground depending on implementation.
+The Gateway shall record imagery with associated audio.
+Rationale: Top-level requirement establishing the need for any Gateway-generated imagery (and associated audio, where applicable) to be recorded onboard.
+This requirement covers all imagery (internal & external), motion (video), and stills.
+The Gateway shall provide imagery with associated audio to Exploration Systems.
+Rationale: Top-level requirement establishing the need for the Gateway vehicle to generate imagery (with associated audio, where applicable) and make that imagery available to other Exploration systems (Orion, Mission Systems, etc.).
+This requirement covers all imagery, internal, external, motion (video), and stills.
+Audio/Video Synchronization with the Gateway onboard clock can occur at the source or on the ground depending on implementation.
+The Gateway shall comply with applicable requirements in DSG-SPEC-ECLS-007, Gateway Program Subsystem Specification for Environmental Control and Life Support System (ECLSS).
+Rationale: An integrated Environmental Control and Life Support System will be implemented across Gateway to ensure habitability across all habitable volumes, including visiting vehicles attached and open to the Gateway.
+The Gateway Program Subsystem Specification for ECLSS defines the specific functionality required of the ECLSS to enable top level capabilities, associated design standards, and module level functional and performance requirements.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall condition the atmosphere in habitable volumes and attached visiting vehicles to maintain temperature and humidity levels and to provide proper atmosphere circulation within the habitable volumes.
+Rationale: Air conditioning includes circulation of air to ensure proper mixing, and maintaining the temperature and humidity levels within system capabilities.
+This function must be performed during crewed and uncrewed periods to protect both crew and vehicle systems.
+Further specification may be found in the Gateway ECLS Subsystem Specification.
+The Gateway shall provide potable water for crew, system and payload use.
+Rationale: Potable water is necessary to maintain crew hydration during Gateway operations.
+Water may also be needed for operating science and technology payloads, and other systems such as the EVA suit.
+Water safety establishes that physiochemical and microbiological limits are met.
+Water quantity and delivery specifications will be defined in the DSG-SPEC-ECLS-007 ECLS Subsystem Specification and the Payload IRD.
+The Gateway shall provide fire detection, suppression, isolation, and recovery for any internal fire events when there are potential flammable materials or ignition sources present, or credible oxygen enrichment.
+Rationale: Fire protection includes fire prevention, fire detection and fire suppression.
+This capability is needed in both crewed and uncrewed mission phases.
+End item fire protection is accomplished primarily by controlling flammable materials and ignition sources.
+Flammable materials are controlled per NASA-STD-6016, Standard Materials and Processes Requirements for Spacecraft, and ignition sources are minimized via adherence to electrical design requirements such as proper bonding, grounding, wire and fuse sizing, and circuit protection.
+An ignition source is a source of heat sufficiently intense and localized to induce combustion.
+Any item that could cause sparks, such as a brush motor, is also considered an ignition source.
+If materials flammability and electrical requirements are not met, detection and suppression must be discussed during the safety review process.
+Gateway shall maintain airborne contaminants below applicable limits for nominal human performance during crewed periods.
+Rationale: Contaminants may be added to the atmosphere by crew, including carbon dioxide, particulates, and trace gases.
+Trace gases are added to the atmosphere through normal off-gassing from system surfaces.
+Additionally, particles associated with lunar regolith may be presented to the Gateway after a human lunar mission and through lunar sample return through the Science Airlock.
+This document may only be released according to the Destination Control Statement on the front cover.
+Specific capabilities and limits will be further defined in the Gateway ECLS Subsystem Specification.
+The Gateway shall collect, contain, and dispose of crew bodily wastes.
+Rationale: This requirement applies to the collection of crew metabolic waste associated with the toilet including urine, feces, vomit and other waste.
+While collection is only applicable during the crewed period, any long term storage may need to be managed during the uncrewed period.
+It is expected that waste will be collected in the Habitation Element and may be transferred to another module, such as a LM, for long term storage and disposal.
+Venting of pretreated urine must be coordinated with structures and external systems, and must be balanced or non-propulsive to minimize Gateway stack attitude impulses.
+The Gateway shall provide emergency equipment for crew survival, accessible within the time required to respond to the emergency.
+Rationale: This is hardware needed in each element with hazards that might lead to a compromised atmosphere to allow crew to translate to a safe location within Gateway or the vehicle intended for crew return to Earth.
+Efficient transit includes appropriate orientation with respect to doorways and hatches, as well as obstacle avoidance and illumination along the egress path.
+Hardware must be readily accessible to allow escape in the shortest amount of time.
+Likewise an emergency lighting system must be automatically activated to allow operators and other occupants of a module to move to a safe location in the minimum amount of time.
+The portable hardware classified as emergency equipment should be provided as Common Equipment to the modules to ensure commonality, compatibility, and portability.
+The Gateway shall be designed to operate in atmospheric conditions with 0% humidity during uncrewed periods.
+Rationale: During crewed operations, the dew point will remain within crew comfort levels.
+During the uncrewed period, the cabin may be very dry with a dew point less than 4C (39F) at lowest allowable temperature.
+Humidity may be removed purposefully to prevent condensation and microbial growth.
+The humidity will passively be reduced as the pressure is maintained with dry gasses and no crew is present to replenish atmospheric vapor.
+Appropriate design of electronics must be included to control electrostatic discharge (ESD) hazards.
+Design Specifications to minimize risk of ESD may be found in DSG-RQMT-004, Gateway Electromagnetic Environmental Effects (E3) Requirements Document, and DSG- RQMT-007, Gateway Requirements for the Control of Electromagnetic Interference Characteristics of Subsystems and Equipment Document.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall operate in conditions up to 24.1% oxygen with nominal operating functions at the nominal atmospheric pressure of 101.3 kPa (14.7 psi).
+Rationale: Enriched oxygen concentrations increase the flammability of materials within that environment.
+Extensive flammability materials has been captured and is reflected in the NASA Materials Selection Database for flammability at this operating point.
+Oxygen concentration control ranges will be defined in the Gateway ECLS Subsystem Specification.
+The Gateway shall operate in conditions up to 30% oxygen for atmosphere pressures up to 70 kPa (10.2 psia).
+Rationale: Elevated oxygen concentrations are needed at lower pressures to sustain human life.
+Extensive flammability materials has been captured and is reflected in the NASA Materials Selection Database for flammability at this operating point.
+Oxygen concentration will be defined in the Gateway ECLS Subsystem Specification.
+The Gateway shall maintain an internal habitable environment at pressures between 65 kPa (9.5 psia) to 102 kPa (14.9 psia); with the exception of airlocks.
+Rationale: When crewed, the Gateway will be nominally maintained at pressures near to Earth sea level 101 kPa (14.7 psi).
+The full range allows for operational flexibility during crewed and uncrewed periods, including response to contingency scenarios and potential reduction of consumables during uncrewed periods.
+This function must be performed during crewed and uncrewed periods to protect both crew and vehicle systems.
+Further specification may be found in the Gateway ECLS Subsystem Specification.
+Pressurized modules have a design pressure for structural design purposes higher than 14.9 psia to account for pressure set points of positive pressure relief valves (PPRVs) and fault tolerance of the ECLS system.
+The required maximum design pressure for structural design is provided in the element and module allocated requirements sections.
+The Gateway shall maintain interior atmosphere temperature to between 4°C (39°F) and 27°C (81°F).
+Rationale: This requirements establishes the full temperature control range for the Gateway during both crewed and uncrewed periods.
+The Gateway will maintain temperatures according to crew capability during crewed mission phases.
+These ranges will be further specified in the Gateway ECLS Subsystem Specification.
+The Gateway shall equalize the pressure between adjacent isolated modules.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: Vestibule pressurization is required prior to hatch opening between modules and to allow a visiting vehicle to be opened to the Gateway Habitation Element.
+This is required during crewed and uncrewed mission phases.
+The Gateway shall limit disturbances caused by venting of fluids and gasses per the <TBD-L2- GW-059> table.
+Rationale: Nominal ECLS functions include venting of waste gases and fluids from ECLS systems and payloads.
+Additional venting would occur with nominal venting associated with pressure control functions, included reduction in in the internal atmosphere pressure, depressurization of vestibules to support departure of visiting vehicles, and airlock operations.
+Thermal Control Subsystem capable of maintaining its own equipment within thermal limits at all times for any flight attitude.
+Modules within the Habitation Element will be capable of sharing thermal control resources with an adjacent module for flexibility during contingencies.
+Each module may utilize active and/or passive thermal control methods to meet thermal requirements.
+Thermal Control Subsystem Specification defines the specific functionality required to enable top level capabilities, associated design standards, and element/module level functional and performance requirements.
+Thermal Control System that maintains all habitable volumes and internal and external components within thermal limits.
+Rationale: Each Element/Module in the integrated Gateway stack must maintain its components, both internal and external, within thermal limits.
+Any modules with habitable volumes must also maintain the internal environment within thermal limits for both crewed and uncrewed operations.
+The Gateway shall operate within thermal limits independent of flight attitude.
+The integrated Gateway stack must have the flexibility to be pointed in any direction to support mission objectives.
+Thermal Control System to operate within thermal limits at any attitude necessary, making its performance flight attitude independent.
+However, indefinite duration capability at any attitude is not possible, so duration limits must be established and provided to stakeholders.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall apply an architecture that provides for module thermal independence during non-contingency operations.
+Rationale: Each Module's TCS will need to be responsible for its own thermal independence and ability to manage its own heatloads during nominal operations.
+The Gateway shall have crew hatches in accordance with DSG-SPEC-HTCH-019, Gateway Program Subsystem Specification for Hatches.
+Rationale: Providing a common set of functional requirements for all Gateway crew hatches simplifies crew training, eases operations, increases reliability of operation, and streamlines the development process by providing a ready set of base requirements for an end item specification.
+The Gateway shall continuously record structural dynamic responses at discrete locations and process data to assess structural life consumption and perform damage detection, location, and assessment.
+The structural health monitoring system is required to measure responses of the Gateway to actual dynamic loads in order to assess structural life usage vs predicted loads.
+Knowledge of life state can be used to modify operations to either add constraints to protect structural life or to reduce un-needed constraints.
+Due to limitations on crew time and other Gateway resources, automated structural damage detection, location, and assessment can be utilized to determine criticality of damage and focus remediation efforts.
+The Gateway shall limit atmospheric leakage rate to less than 0.05 kg/day at ambient pressure in isolated module configuration.
+Rationale: This leakage rate is consistent with ISS experience and reflects the leakage of multiple elements aggregated on-orbit.
+The Gateway shall detect atmospheric leaks greater than <TBD-L2-GW-011>.
+Rationale: Detection of leaks will allow for response and repair, in the event of an atmospheric leak, by the crew or autonomously.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall localize atmospheric leaks to within <TBD-L2-GW-012> location in any pressurized habitable volume.
+Rationale: Localization of leaks will allow for response and repair, in the event of an atmospheric leak, by the crew during crewed periods or autonomously during uncrewed periods.
+The Gateway shall have an 800mm -0.3mm/+unlimited diameter transfer passageway between modules mated with the Gateway Docking System (GDS), as described in the DSG-SPEC- MECH-017, Gateway Program Docking System Specification.
+Rationale: DSG-SPEC-MECH-017, Gateway Program Docking System Specification compliant mechanisms only provide an 800mm diameter passageway for a distance of 3-4 ft when mated.
+Items to be transferred between Gateway Elements need to be sized appropriately.
+The Gateway shall be equipped with passive or active crew exercise equipment isolation systems to reduce induced loads to the primary structure to less than or equal to <TBD-L2-GW- Gateway structure.
+The Gateway shall have a Probability of No Penetration (PNP) greater than or equal to for items with the potential to create a catastrophic hazard if impacted or punctured by MMOD.
+Rationale: This requirement sets the limit for the probability of no penetration.
+This requirement is based upon the ISS PNP requirement for permanent modules.
+Area is the outer most surface area of the module and is in m^2 and Time is in years.
+Time used for calculation should encompass the expected life of the module.
+For the purposes of MMOD, a penetration is defined as damage/failure to stored energy devices that causes a hazard to crew or Gateway survivability.
+Typically, penetration is defined as a partial or complete perforation of the pressure vessel or casing, detached spall from the pressure vessel wall, damage to the pressure vessel that would allow unstable crack growth, or deformation of a casing of rotating machinery such that the deformation could intrude into the dynamic envelope of the rotating device.
+For metallic tank pressure vessels, critical damage is defined as a penetration depth in the pressure shell of 20% of the thickness of the pressure shell.
+For composite overwrapped pressure vessels, critical damage is defined as penetration of 90% of the composite overwrap thickness.
+Solar array panels are not included in this requirement.
+This document may only be released according to the Destination Control Statement on the front cover.
+The meteoroid environment is defined in NASA/TM-2015-218214, NASA Meteoroid Engineering Model Release 2.0, and the orbital debris environment is defined in NASA/TP-2015-218592, NASA Orbital Debris Engineering Model.
+The Gateway shall provide at least single failure tolerance to catastrophic events.
+Catastrophic hazards that cannot be controlled using failure tolerance may be exempted from the failure tolerance requirements with mandatory concurrence from the Technical Authorities and Director, Johnson Space Center (JSC) (for crew risk acceptance).
+Exemptions from failure tolerance shall be requested in accordance with DSG-RQMT-011, Gateway Hazard Analysis Requirements.
+Rationale: Compliance with this requirement can be accomplished at the end item level or through a combination of hazard controls at the Module/System levels and end item level.
+A common way to improve reliability and thus meet safety requirements is to use systems that tolerate failures when complete failure avoidance isn’t practical.
+Specific hazard controls and implementation must be derived from an integrated design and safety analysis performed in accordance with DSG-RQMT-011, Gateway Hazard Analysis Requirements.
+Acceptance of these approaches by the Technical Authorities avoids processing waivers for numerous hazard causes where failure tolerance is not the appropriate approach.
+Additional failure tolerance may be required to meet systems reliability requirements.
+The Gateway shall provide the capability for autonomous operation of system and subsystem functions, which if lost, would result in a catastrophic event.
+Rationale: This capability means that the system does not depend on communication with Earth (e.g., mission control) to perform functions that are required for control of catastrophic hazards.
+While the crew is present, the Gateway should automate catastrophic hazard controls to minimize the need for crew actions, using crew action only as a last resort where automation is not practical.
+Rationale: Critical hazards do not require failure tolerance for human-rating, however, critical hazards can have a significant impact on Loss of Mission (LOM) risk.
+The Gateway Program will derive the specific hazard controls and implementation from an integrated design and safety analysis performed in accordance with DSG-RQMT-011.
+Failure tolerance for critical hazards may be required to meet probability of loss of mission or system reliability requirements (if applicable).
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall provide the appropriate failure tolerance capability without the use of emergency equipment and systems.
+Rationale: Emergency systems, EVA or emergency operations cannot be used as a leg of failure tolerance as these emergency systems and equipment cannot definitively prevent an initiating event.
+As a result, the mitigation of catastrophic and critical hazards will implement a FT strategy without the use of EVA, emergency systems, or emergency operations.
+However, the use of EVA, emergency systems, and contingency or emergency operations will be considered a Crew Survival Method (CSM) to prevent Loss of Crew (LOC) in the event all other approved hazard controls have failed.
+The Gateway shall protect redundant systems, redundant subsystems, and redundant major elements of subsystems (such as assemblies, panels, power supplies, tanks, controls, and associated interconnecting wiring and fluid lines) to ensure that an unexpected event which damages one is not likely to prevent the other from performing the functions.
+Rationale: Where redundancy is used to satisfy the failure tolerance requirement, this design requirement provides maximum protection from common cause events.
+This requirement does not mandate physical separation but physical separation has been a historically demonstrated method to mitigate common cause failures.
+System analysis needs to consider the channelization of all capabilities necessary to manage Fault, Detection, Isolation and Recovery (FDIR) including sensors and utility services such as power, thermal and data.
+Rationale: For NASA sponsored end items the risk of human casualty on the ground is limited to less than 1 in 10,000 as required per NASA-STD-8719.14A, Process for Limiting Orbital Debris.
+The NASA-STD is a companion to NPR 8715.6 and provides specific requirements and assessment methods to assure compliance with the NPR.
+The principal factors used in calculating the risk of human casualty from uncontrolled reentries include the number of debris expected to reach the surface of the Earth, the kinetic energy of each surviving debris, and the amount of the world population potentially at risk.
+The last factor is a function of both the orbital inclination of the space structure prior to re-entry and the year in which the re-entry occurs.
+Extensive human casualty studies by the U.S. Government, including the Department of Defense and the Department of Energy, have examined the probability of injury and/or death from falling debris for a variety of impacting kinetic energies to humans.
+A kinetic energy threshold criterion of 15 joules is widely accepted as the minimum level for potential injury to an unprotected person.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall comply with the requirements in DSG-SPEC-CHP-010, Gateway Program Subsystem Specification for Crew Health and Performance (CHP).
+Rationale: DSG-SPEC-CHP-010 includes content decomposed from requirements in DSG-RQMT-001 regarding crew health and performance.
+This specification addresses aspects of crew health and performance such as Medical Capability, Environmental Health, Behavioral Health, Wellness Support, Crew Performance Capability, Countermeasures, and CHP Data Integration across all Gateway modules and includes an applicability Matrix denoting applicability to specific Gateway Elements.
+The Gateway shall provide a habitable volume that accommodates crew living and working tasks.
+Rationale: To maintain a habitable volume and high level of mission performance and safety, it is important that the architectural layout of the vehicle is functionally designed to provide defined locations and volumes that allow for expected crew activities, including mission operations, habitability functions, and translation (for example, movement between areas).
+Required volume is a function of the number of crewmembers, number of mission and contingency days, and crew operations (both nominal and off-nominal).
+Adequate internal size, in terms of volume and surface area, needs to be provided to ensure expected number of crewmembers can safely, efficiently, and effectively perform mission tasks, including, but not limited to, work, sleep, eat, personal hygiene, private crew areas, translation, egress, ingress, pressurized suit donning, emergency medical treatment, and other tasks necessary for a safe and successful mission.
+Mission and volume designers are to carefully analyze volume needs of the crew, crew equipment, storage, trash containment volumes and trash transition plans to ensure they are adequately sized to provide adequate net habitable volume for the crew to effectively and efficiently perform mission objectives.
+Every effort should be made to separate functional areas for activities that could degrade or operationally conflict with each other, particularly emergency response activities, or that produce environmental conditions that are detrimental to mission performance or safety (for example, glare, noise, vibrations, heat, odors, etc.).
+Co-location of unrelated activities could degrade operations resulting in increased workload and operational delays.
+Furthermore, traffic flow is not to interfere with other unrelated operational and recreational activities of the crew.
+These activities may include sensitive spacecraft control, routine servicing, experimentation, eating, sleep, and relaxation.
+Similarly, co-location of related, sequential functional work areas can reduce transit time, communication errors, and operational delays.
+For example, food stowage and food preparation areas should be located near one another to minimize the time required to retrieve food for meals and promote group dining for behavioral health benefits; and consistent spatial orientation and visual distinctions such as identifiers and aids can promote effective execution of mission tasking.
+This document may only be released according to the Destination Control Statement on the front cover.
+The management of crew nutrition is defined as influencing the design, provision, and operational implementation of in-flight nourishment of crewmembers over the course of the mission to perform Gateway tasks.
+Nutrition capabilities include provisions for food and food hydration, crew hydration, storage and preparation facilities, dining accommodations (group meals), tracking of nutritional intake, food system training, and implementation of individualized or standard in-flight menus.
+Nutrition also includes management of food system quality (food acceptability and metabolic intake (Intravehicular Activity (IVA) and EVA)), food safety (food micro-organism levels, cross-contamination prevention, cross-contamination separation), and food preparation (heating, rehydration, dining accommodations, in-flight food preparation time), and clean-up (food system waste, food system spill control, food system cleaning and sanitizing).
+The Gateway shall manage crew medical care, per DSG-SPEC-CHP-010, Gateway Program Subsystem Specification for CHP.
+The management of medical care is defined as influencing the design, provision, and operational implementation of the relevant in-flight medical capabilities.
+Medical care capabilities include clinical care, imaging, laboratory management, and pharmacy management, wellness support, and an integrated crew health and performance data system.
+Clinical care provides in-flight capabilities for the prevention, diagnosis, treatment, monitoring, and long-term management of medical conditions.
+Imaging provides in-flight capabilities for diagnostic imaging in support of the provision of clinical care and includes all hardware, software, and analysis capabilities required for the capturing and processing of diagnostic imaging.
+Laboratory management provides in-flight capabilities for laboratory analysis in support of the provision of clinical care and includes all hardware, software, and analysis capabilities required for the collection and processing of biological samples.
+Pharmacy management provides in-flight capabilities for the administration of pharmaceuticals in support of clinical care and includes all medications and the mechanisms used to prepare and deliver them and track their use.
+Wellness support capabilities include functions required to promote, maintain, and protect the physical and mental well-being of the crewmembers.
+This support comes in the form of physiological health management, nutrition management, behavioral support, and sleep management.
+Medical care also encompasses two-way private voice and video communication with Mission Systems.
+Also under medical care are the capabilities and plans for handling deceased crewmembers that are socially, biologically, and physically acceptable.
+NASA-STD-3001, Volume 1, includes definitions of the levels of medical care required to reduce the risk that exploration missions are impacted by crew medical issues and to ensure that long-term astronaut health risks are managed within acceptable limits.
+As mission duration and complexity increase, the capability required to prevent and manage medical contingencies correspondingly increases.
+The ability to provide the designated level of care applies to all flight phases, including during pressurized suited operations.
+A medical system provides preventive care, diagnostic care, and medical treatment and must consider any possible in-flight medical need including persistent health conditions.
+This document may only be released according to the Destination Control Statement on the front cover.
+Additional information on Levels of Care can be found in NASA/TM- System Development.
+To date, there have been multiple illnesses and injuries during all mission phases and, in the absence of adequate clinical capabilities, the likelihood of significant negative impact to mission viability due to crewmember illness or injury is increased.
+Because immediate transport to a clinical facility is not an option on-orbit, in flight health care is essential and is optimal with an integrated crew health data system, to support the detection, diagnosis, and treatment of illness and injury.
+An integrated crew health data system aids in the management of crew health in-flight, especially for the early detection and intervention for medical issues.
+During missions with longer evacuation times and mission duration, the management of data, information, and ability for extensible knowledge augmentation becomes increasingly important in order to manage the medical care and wellness of the crew efficiently.
+To aid the crew in basic decision support through automatic organization of data and knowledge augmentation materials (such as medical references), an integrated system should collect, process, and store all crew health-relevant data from various sources (vehicle and ground), in addition to crew task performance data, and make this data available to both the crewmembers and ground support.
+Necessary capabilities include data sources interfaces for secure data collection, data storage, descriptive analytics, advanced analytics, and data user interfaces.
+Descriptive analytics provides in-flight capabilities for modelling and analytics, data mining, discovery and search and report generation.
+Advanced analytics can provide in-flight capabilities to store knowledge bases and provide basic decision support functionality.
+Data user interfaces provides in-flight capabilities for the crewmembers to interface with the vehicle's habitat data infrastructure, including messaging, data input, and display.
+The management of crew behavioral health is defined as influencing the design, provision, and operational implementation of in-flight behavioral health.
+Behavioral health capabilities include the assessment, monitoring, and intervention pertaining to psychological adaptation, workload, sleep and fatigue issues, key relationships (e.g., relationships with family and friends, intra-crew relationships, and relationships between the crew and ground), and behavioral medicine.
+Also includes the implementation of individually-tailored countermeasures, support of work/life balance, provision of leisure activities, delivery of family support services, provision of private crew areas, motivation, alertness, cognition, and adaptation of the crewmember during flight.
+Behavioral health management is needed to prevent and ameliorate the deleterious effects of living in an isolated and confined space and to preserve both individual and “crew as a unit” behavioral health and performance and cohesive functionality.
+The management of crew behavioral health includes: design, provision, operational implementation, and hardware/software that is necessary to provide in-flight behavioral health support.
+Behavioral health and performance capabilities include assessment, monitoring, and mitigation strategies are related to psychological adaptation and dependent on workload, sleep and fatigue issues.
+Providing individualized countermeasures to support work/life balance, private crew areas, leisure activities and family support services are dependent on the crew member’s alertness, cognition, motivation, and adaptation.
+This document may only be released according to the Destination Control Statement on the front cover.
+Behavioral health management is needed to prevent and ameliorate the deleterious effects of living in an isolated and confined space and to preserve both individual and “crew as a unit” behavioral health and performance and cohesive functionality.
+The management of crew sleep is defined as the design, provision, and operational implementation of in-flight sleep capabilities.
+Sleep capabilities include, but not limited to, sleep accommodations that are temperature controlled and that eliminate noise and light pollution, schedules for sleep shifting for mission essential tasks, variable wavelength light assemblies, software supporting electronic devices with visual displays consistent with circadian rhythm lighting requirements, prevention of fatigue-induced performance errors, and preservation of the ability of crewmembers to respond in contingency situations.
+Sleep maintenance includes blue blocking glasses, and properly ground tested medications including but not limited to: chronobiologic, alertness, sedative- hypnotics, soporifics and control of ambient environmental factors.
+The Gateway shall manage crew physiological health.
+The management of crew physiological health is defined as influencing the design, provision, and operational implementation of in-flight pre, in, and post-flight countermeasures systems to mitigate risks to crew health and performance.
+Physiological health capabilities include activities such as exercise, hygiene, and other conditioning and countermeasures against physiological disturbances to body systems (e.g., musculoskeletal, cardiovascular, respiratory, gastrointestinal, genitourinary, neurovestibular, ocular, hearing, immune, and reproductive).
+Pre-flight, in-flight, and post-flight countermeasures shall include resistance and aerobic exercise hardware, sensorimotor preservation hardware and software systems, exercise software, nutritional supplementation, pharmaceutical supplementation, and human health and performance software optimization tools.
+Nutritional / pharmaceutical supplementation may include provision of additional caloric content, specific macronutrients, and/or other pharmaceutical supplementation to the existing food system.
+These may be used pre, in, and post flight and factors including shelf life, and storage should be incorporated in nutritional tracking software.
+Human health and performance optimization tools will require incorporation of vehicle systems data and other CHP systems data in a data management system that will allow for running existing algorithms to inform/predict crew health and performance capabilities.
+Incorporating this information into display/informatics systems is critical.
+The intent of this specific countermeasures is to align with the phased approach of using Gateway as a proving ground to develop tools for improved crew autonomy.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway system shall limit cross-contamination between food preparation areas and body waste management and hygiene areas.
+Rationale: Limiting the transfer of microorganisms to the food preparation areas protects crew health.
+To properly control the contamination of the food preparation area from the body waste management and hygiene areas, a task analysis must be performed to identify important design factors (i.e. concurrent use of the areas, volume needed at each location to prevent contact, distance between areas, storage and accessibility requirements, etc.).
+The chance of cross-contamination can be further decreased by designating body waste management and personal hygiene areas as far away from food preparation areas as possible.
+While vehicle design constraints may limit the distance between the areas, measures must be in place to prevent food contamination during preparation, such as a higher quality body waste containment and isolation system.
+The Gateway shall protect crew from toxicological hazards.
+Rationale: Environmental hazard protection includes capabilities to measure, monitor, assess, alert, and respond to toxicological concerns in the Gateway atmosphere.
+Toxicological protection ensures in-flight capabilities for toxicological monitoring, assessment, and mitigation in Gateway air and water.
+Additional examples include provisions of personal protective equipment for crew survival in a compromised atmosphere, data recording and display, fire detection, warning, and extinguishing, and emergency equipment accessibility.
+The Gateway shall protect crew from microbial hazards.
+Rationale: Environmental hazard protection includes capabilities to measure, monitor, assess, alert, and respond to microbial concerns in the Gateway atmosphere.
+Microbial environmental protection ensures in-flight capabilities for monitoring and mitigating microbial contamination in the air, water, and surfaces as well as capabilities for decontamination.
+This also includes the capability to maintain personal hygiene and have adequate food and waste storage.
+The Gateway shall protect crew from acoustic hazards.
+Rationale: Environmental hazard protection includes capabilities to measure, monitor, assess, alert, and respond to acoustic concerns in the Gateway atmosphere.
+Acoustic environmental protection ensures in-flight capabilities for monitoring, assessing, and mitigating harmful acoustic environments through hearing protection and acoustic and vibrational dampening countermeasures.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall protect crew from radiation hazards.
+Rationale: Environmental hazard protection includes capabilities to measure, monitor, assess, alert, and respond to radiation concerns in the Gateway atmosphere.
+Radiation environmental protection ensures in-flight capabilities for the monitoring and provision of alerts and warnings for the space weather (ionizing radiation) environment.
+This also includes protection from, and treatment of, exposure to highly ionizing radiation environments, in addition to capabilities to maintain safe levels of non-ionizing radiation exposure.
+The Gateway shall maintain a shirt sleeve environment in all habitable volumes during crewed missions.
+Rationale: A safe, breathable atmosphere is critical to crew health and performance.
+Monitoring atmospheric quality, alerting ground and crew of off-nominal conditions, and evaluating environmental data trends during vehicle flight operations is essential to crew health support.
+The vehicle system needs to be robust enough to control or allow crew control of atmospheric pressure, humidity, temperature, ventilation flow rate, airborne particulates, partial pressure of O2, CO2, and trace contaminants within ranges necessary to maintain human health and safety.
+The vehicle must also be robust enough to maintain safe, comfortable atmospheric conditions within physiological ranges during crew induced thermal loading such as exercise.
+The Gateway shall manage expected biological hazards.
+Rationale: Management is defined as influencing the design, provision, and operational implementation of the capability for controlling biological hazards.
+Biological hazards include blood, bodily fluids, medical equipment, and sharp items.
+If not properly contained, contents could damage equipment, injure crewmembers, and transmit disease.
+Biological waste, including vomit and feminine hygiene products, can also cause injury and transmit disease.
+The Gateway shall incorporate window(s) in a habitable element for crew viewing that maximize views of both the Moon and Earth measuring no less than 50.8 centimeters (20 inches) in diameter.
+Rationale: This requirement supports crew psychological health, vehicle inspection, and public outreach.
+The window size supports simultaneous use by two crewmembers and is consistent with the window currently in the ISS U.S.
+More than one window may be required as the nominal Gateway NRHO orbit and SPEA attitude constrains observations (duration, distance, and look angle) for any single window.
+While attitude changes can optimize window views, no propellant has been allocated for maneuvers and CMG desaturations.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall tolerate an inadvertent operator action, as identified by a human error analysis (HEA), without causing a catastrophic event.
+Rationale: An operator is defined as any human that commands or interfaces with the space system during the mission, including humans in the control centers.
+The appropriate level of protection (i.e., one, two, or more inadvertent actions) is determined by an integrated human error and hazard analysis.
+This requirement is not intended to prevent operators from initially selecting the wrong control.
+The system needs to ensure the crew can recover from inadvertent input with minimal impact by incorporating the capability for undoing control input.
+The Gateway shall tolerate inadvertent operator action in the presence of any single system failure.
+The intent of this requirement is to provide a robust human-system interface design that cannot be defeated by a system failure.
+Where the system is designed to protect for more than one inadvertent action, the level of protection after a single system failure may be reduced - but still protects from a single inadvertent operator action.
+In addition, this ensures that back-up capabilities, such as back-up flight software, maintain the same-level of tolerance to human error as the primary system.
+Prevent human error in the maintenance, operation, and control of the system.
+Design the system to limit the negative effects of errors.
+Rationale: Human error is either an action that is not intended or desired by the human or a failure on the part of the human to perform a prescribed action within specified limits of accuracy, sequence or time that fails to produce the expected result and has led or has the potential to lead to an unwanted consequence.
+Controlling Human Error requires identification of human errors through human error analysis (HEA).
+The HEA is a systematic approach to evaluate human actions, identify potential human error, model human performance, and qualitatively characterize how human error affects a system.
+HEA provides an evaluation of human actions and error in an effort to generate system improvements that reduce the frequency of error and minimize the negative effects on the system.
+The human error analysis considers mission operations while the crew is interacting with the space system - including crew operations, ground control operations (typically covered via hazard reports), and ground processing operations with flight crew interfaces.
+The analysis also covers response to system failures and abort scenarios.
+This document may only be released according to the Destination Control Statement on the front cover.
+Identify other types of human error that would result in a catastrophic event (e.g., operational errors, errors of omission, timing errors).
+Apply the appropriate error management as described in this requirement.
+The Gateway shall protect crew from decompression sickness (DCS).
+The Gateway systems and ConOps must protect crew from DCS related to pressure changes for EVA operations (including preparation and return) and off-nominal depressurization situations.
+DCS risk limits are defined in NASA-STD-3001 Volume 1 paragraph 4.4.3.6.1 DCS Prevention.
+This requirement works together with V2 6009 DCS Treatment Capability and V2 11032 LEA Suited DCS Prevention Capability.
+For EVA operations, the DCS prevention design must be coordinated for total pressure, ppO2, and pre-breath protocol between all vehicles/elements inhabited by EVA crew prior to and after EVA (e.g., Orion, Gateway, Airlock, Lander).
+The Gateway shall comply with applicable requirements in DSG-SPEC-CS-006, Gateway Program Subsystem Specification for Crew Systems.
+The Crew Systems system includes IVA subsystems such as galley, housekeeping, crew hygiene, restraints and mobility aids, crew sleep, stowage, inventory management, tools and maintenance, and trash management.
+Some of these subsystems are distributed across multiple Gateway modules and are desired to function with crew and IVR.
+The specification levies some Crew Systems requirements to multiple modules, identifying each requirement’s module allocation.
+The Gateway shall provide for crew to conduct personal hygiene.
+Rationale: Personal hygiene includes body and hair washing, shaving, dental hygiene, and changing clothes in a private volume.
+The volume should be separate from sleep and body waste management volumes.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall provide a trash management system to contain expected trash and evolved gases.
+The trash management system must contain all trash, including hazardous waste, with appropriate wrappings and/or barriers that is usable by crew and does not allow inadvertent release of trash into the habitable volume.
+If not properly contained, trash contents could damage equipment, injure crewmembers, or transmit disease.
+Operations analysis should be performed to drive trash containment design.
+Analysis should evaluate all crew tasks that will generate trash over the duration of a mission, including ascent and return.
+The trash containment design should consider crew usability, how and where trash will be stowed, duration of stowage until disposal, and method of disposal.
+The Gateway shall provide an inventory management system (IMS).
+Inventory management allows the identification of flight equipment in specified locations to maintain organization and efficiency for the crew or IVR, and to identify usage and usage rates for usage and resupply decisions for the crew and ground support.
+IMS needs to assist in tracking and potentially locating logistics, cargo, payload, or utilization items, and provides logistics awareness to ground support.
+The Gateway shall provide a stowage system that can be monitored via the IMS.
+The stowage system does not include vehicle secondary structure.
+The Gateway shall accommodate restraints and mobility aids for IVA operations.
+Rationale: Without gravity to hold an individual on a standing or sitting surface, the body naturally moves in the opposite direction of an applied force.
+The cognitive and physical work required to maintain body position during a task can interfere with the task performance.
+Mobility aids, such as hand and foot restraints, allow crew-members to efficiently move from one location to another in 0 g, as well as reduce the likelihood of inadvertent collision into hardware that may cause damage to the vehicle or injury to the crew.
+This document may only be released according to the Destination Control Statement on the front cover.
+Mobility aids must be designed to accommodate a pressurized suited crew-member, a non-suited crew-member, and IVR assets by providing clearance, non-slip surfaces, and non-circular cross sections.
+Without predefined mobility aids, personnel will use available equipment that may be damaged from induced loads.
+The restraints and mobility aids should be compatible with IVR.
+The Gateway shall provide for self-rescue of an EVA crewperson who becomes separated from the Gateway spacecraft.
+The Safety Tether is the primary means of crew restraint for EVA.
+An EVA crewmember could become separated from the Gateway (i.e. if the crewmember loses grip or comes out of the foot restraint AND if the safety tether breaks or is improperly configured).
+If the combination of these happen, the crewmember would need a self-rescue method for survival to return to the Gateway.
+Orion does not support astronaut egress or ingress for EVA (nominal or contingency) from the crew module.
+The Gateway EVA capability is needed to support external contingency maintenance operations, EVA system demonstrations, and payload and utilization needs.
+EVAs may be nominal (pre-planned prior to the crewed mission) or contingency (responding to an off-nominal scenario which arises during the mission).
+EVA support includes the capability to deliver and prepare the EVA suits, ingress and egress the gateway while minimizing the loss of cabin atmosphere, translation and post-EVA suit maintenance and stowage.
+EVA operations will be available once the Gateway airlock module is added to the Gateway and EVA suits are present.
+Nominal maintenance operations and utilization operations will be performed by EVR.
+The Gateway shall establish EVA worksites <TBR-L2-GW-013>.
+Rationale: Worksites will be assessed as the design matures to determine if they require handrails, Body Restraint Tether (BRT), Worksite Interface (WIF), Articulating Portable Foot Restraint (APFR) i.e. dedicated vs. free-float.
+Worksites <TBR-L2-GW-013> could include EVR backup and utilization.
+Further analysis will be done on forces, torques, envelopes, and LPGF clocking, etc., to support manipulator end-effector requirements and design.
+The specific number and placement of LPGF's will be determined through joint, integrated analysis by the Contractor and NASA.
+The total number of SORI-OVs to be placed on the PPE is dependent on the PPE design and integrated Gateway utilization philosophy and will be determined through an integrated assessment with Gateway.
+An integrated analysis will be performed to determine worksite locations based on Gateway system and module needs.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall comply with interface requirements in DSG-IRD-EVA-008, Gateway Program Extravehicular Activity (EVA) Compatibility Interface Requirements.
+Rationale: HEOMD-004, Human Exploration Requirements, specifies the Gateway shall provide the capability for EVA operations.
+EVA interfaces are designed to be compatible with EVA operations.
+This includes restraining the crewmember, safeguarding both the vehicle and crewmember while working, and accommodating EVA contingency operations using a standard EVA tool set.
+The Gateway shall accommodate EVA capability without blocking access to the visiting crewed vehicle(s) during the EVA.
+Rationale: During prebreathe operations, campout, or if the need arises to depress equipment lock as secondary ingress path, an airlock situated in between the stack and the crewed vehicle isolates IVA crew from the VV or indicates they have to sit in the VV (and may not be able to command Airlock repress from that side).
+The Gateway shall provide EVA compatible accommodations to support continuous translation across adjacent (berthed/docked) modules.
+Rationale: EVA translation across the Gateway stack is necessary to support both EVA test objectives and contingency EVAs regardless of the status of EVR capabilities.
+Translation aids, such as EVA Handrails, and a path free of obstructions or hazards must be designed to support the movement of EVA crew members between the crew lock and EVA work sites.
+Each module is responsible for linking translation paths between modules.
+This may result in the need for handrails to be installed around the circumference of the end of each module and/or extending radial towards the end-cone or docking adapter.
+It is not assumed that each module will have a consistent “clocking” of translation paths, therefore a flexible design solution may be necessary depending on the stack architecture.
+Reference DSG-IRD-EVA-008 for EVA translation path requirements to ensure that the translation paths are designed in accordance to be compatible with the suit.
+An integrated analysis will be performed to optimize continuous translation paths across the integrated Gateway system.
+The Gateway shall provide recharge services for at least two-crew EVA suits two times per crewed mission.
+Rationale: Part of enabling EVA is servicing the EVA suits.
+Servicing and checkout of the suits are performed between EVAs on a maintenance schedule and proceeding any EVA, including recharging consumables.
+Vehicle services to the suit are included through an umbilical interface panel and umbilicals in the Airlock.
+This document may only be released according to the Destination Control Statement on the front cover.
+Supporting prebreathe and volume for suit don/doff, and suit stowage are necessary to support EVAs.
+The EVR IRDD provides the interoperability requirements to enable common robotic interface installation on modules, ORUs and payloads.
+The Gateway shall provide power, data, video, structural support and thermal services, as applicable, to external robotically compatible equipment, during all phases of operation.
+The external robotics includes a set of worksite/payload interface equipment (including SORI) that transfers these services from Gateway modules to payloads.
+These services will also be provided during manipulation (except thermal control).
+Thermal services are specifically transfer of ATCS fluid.
+An integrated analysis will be performed to determine the location of translation paths.
+The Gateway shall provide worksites for external robotics operations in accordance with CSA- GWY-ID-0001.
+Rationale: EVR operations to remove and install equipment require work areas that are designed for robotic compatibility.
+Worksites implies both the contact regions where equipment is installed and the surrounding area which must have clearance and inadvertent contact resistance.
+Operations include but are not limited to inspection.
+A Gateway integrated analysis will be performed to identify where EVR worksites will be located to support Gateway operations.
+The Gateway shall have external ORUs that are compatible with robotics per the EVR Interface Requirements and Definition Document CSA-GWY-ID-0001.
+Rationale: Gateway EVA is available on a contingency basis only, therefore any external ORUs must plan for robotics to be the primary means for installation and removal.
+The Gateway shall autonomously perform off-loading and re-loading of external logistics vehicles.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway will provide a capability to off-load the external ORUs and experimental payloads that can be used without requiring crew or constant ground communication.
+The Gateway shall provide external robotically compatible attachment locations that provide services for ORUs, systems, and payloads during all ORU/payload life-cycle phases: operation, non-operation, external stowage, robotic manipulation and any others.
+Rationale: External robotically-compatible attachment locations with standard SORI, LPGF, and LORI fixtures will be used for ORUs for Gateway maintenance, external cargo not used immediately on delivery by the Logistics Module (or other source), and active payload instruments and hardware.
+Multiple instruments may be hosted on a single SORI or LPGF, assuming the instruments stay within the resource, structural and volume envelopes.
+The interface plate should allow for additional capability of long duration stare/pointing.
+Quantities and locations will be defined in <TBD-L2-GW-065> for utilization planning and module procurement.
+The Gateway shall provide a robotically compatible science airlock.
+Rationale: To support science and utilization of robotic transfer of payloads and ORUs into/out of the Science Airlock by both internal and external robotics.
+The Gateway shall provide redundant robotic translation paths and utilization access (single- fault tolerance).
+Rationale: Ensures that any single LPGF failure cannot trap the arm or eliminate access for utilization and maintenance.
+An integrated analysis will be performed to determine the location of translation paths.
+Translation paths need to be designed according to manipulator reach and maintained to be free of obstructions.
+The Gateway shall support external robotics performing end-over-end translation to perform its functions on all external surfaces of the Gateway where robotics activities are planned.
+The external robotic manipulators are expected to be dual-ended with walk- over capability, and a moving base analogous to ISS-MBS is not planned.
+In order to fulfill the operational need, it has to translate around the Gateway in order to execute its functions.
+This includes reconfiguring the TTE network and the power distribution network.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: Gateway needs to provide spaced out base points for External Robotic manipulators to access the areas where activities are planned to take place.
+To do this, Gateway needs to attach grapple fixtures to structural hard points and route cabling to the connectors.
+The coverage of Gateway will be assessed and analyzed to determine the location requirements.
+The Gateway shall have an external robotic system capable of autonomous operations that implements the following functions on the exterior of Gateway: inspection, installation and removal of payloads, transfer of equipment through the science airlock, off-loading and re- loading of logistics vehicles, free-flying vehicle capture and release, lunar and planetary mission equipment transfer, lunar and planetary element assembly, berthing and unberthing of modules and vehicles, removal and replacement of ORUs, self-maintenance, and assistance to EVA.
+Rationale: This provides the list of primary functions that EVR will furnish to Gateway, and which Gateway needs to support with the appropriate infrastructure.
+The functions are intended to be autonomous to eliminate dependence on crew presence, to reduce communication and control resource usage on the ground, to reduce operational lifecycle costs and to be a proving ground for path to Mars.
+The Gateway shall limit disturbances to the vehicle and robotics, during sensitive External Robotic operations, to a level <TBD-L2-GW-014> that will not affect robot performance and safety, without the need for flight-specific analysis, including after a single failure.
+Rationale: Based on ISS experience, attitude and orbit control systems need to have a passive mode to minimize disturbances during robotic ops.
+On ISS this involved selection of a Torque Equilibrium Attitude (TEA) to maximize CMG control capacity, controlling exercise, not performing dockings or orbital maintenance, and inhibiting CMG desaturations when the robotic hardware was within 2 ft of structure.
+The Gateway shall support a network with a TTE end-over-end translation of the external robotics.
+Rationale: Robotic end-to-end relocation will require a reconfiguration of TTE topology, as well as payload and ORU mate/demate operations.
+The Gateway shall support self-deployment of the EVR Element upon initial delivery.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: When the logistics module arrives at Gateway, there will likely be no crew to assist, and EVA time is not meant to be expended on nominal operations even if they were there.
+The Gateway shall comply with applicable requirements in DSG-SPEC-IVR-013, Gateway Program Subsystem Specification for Intravehicular Robotics.
+To promote the successful integration between the internal robotics and the Gateway modules and systems, a set of requirements that dictates interface, performance, and functions was developed.
+Adherence to this subsystem specification will ensure that the internal robotics system can successfully achieve its tasks and goals while minimizing the overall impact to the Gateway.
+The Gateway shall provide the ability to access and service designated internal payloads and logistics without the need for crew intervention.
+Rationale: During uncrewed periods, payloads and logistics will be delivered to the Gateway and will need to be able to be extracted, moved, unpacked, installed, operated, maintained and serviced.
+The Gateway shall have internal robotic assets capable of inspection.
+Rationale: Per requirement of dormancy / uncrewed periods of up to 3 years (HEOMD-01: DSG-R-5), multiple activities in Gateway may require mobile robots, or robots with dexterous manipulation capability, to perform detailed inspections.
+IVR can be controlled either autonomously or with assistance from Earth-based mission control.
+IVR can be controlled either autonomously or with assistance from Earth-based mission control.
+The Gateway shall support internal robotics access between modules.
+Rationale: During uncrewed periods, internal robotics must be able to either pass through open hatches or pass objects through open hatches to successfully accomplish most tasks.
+Based on vestibule length, this might include the need for IVR translation aids near the hatch or even in the vestibule.
+The Gateway shall provide a method for determining and communicating internal location information that is common to internal robotics and human operators (crew and ground).
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway needs to provide a similar approach and a common language for discussing location that satisfies both robotic and human needs.
+Complexity of a robotic system is greatly reduced if an appropriate markings system is used to simplify identification and localization.
+The Gateway shall ensure that payloads, equipment, and tools used by internal robotics have interfaces for both humans and robots.
+Rationale: This will ensure all locations accessible by internal robotics is also accessible to crew.
+Complexity of a robotic system is greatly reduced if design of human interfaces also considers robotic manipulation.
+Equipment includes systems that are maintainable and repairable.
+These interfaces and any possible adapters will be covered in the IVR ICD.
+The Gateway shall provide stowage and charging interfaces to support internal robotics operations.
+Rationale: Gateway needs to distribute resources required to support internal robotics operations to the modules where internal robotics operations are performed.
+In particular, certain modules will need to serve as "home base" for IVR system components.
+These docking stations will include room for IVR stowage as well as charging and network interfaces.
+The Gateway shall provide a reconfigurable mobile video camera system for inspection and internal robotic operations support.
+Rationale: Robotic tasks can be aided by a free flying camera providing a "bird's eye view", however, this view can be moved/vary between and during tasks.
+This will be compatible with internal wireless communications.
+The Gateway shall use robotically compatible interfaces to allow the IVR system to access/retrieve/install internal logistics cargo.
+Rationale: To help reduce crew time required for logistics management during the 30 day mission, the modules should use robotically compatible interfaces to allow the IVR system to access/retrieve/install logistics cargo.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall provide resources and interfaces for Utilization payloads and payload accommodations as defined in the Gateway Utilization Payload Interface Requirement Document <TBD-L2-GW-062>.
+Rationale: Gateway is intended to support diverse science, (along with associated exploration), activities and close Strategic Knowledge Gaps.
+Gateway will accommodate crewed and uncrewed placement and operation of science assets e.g. internal investigations, external packages, In Situ Resource Utilization (ISRU) operations, transfer of surface samples, sample return to Earth, and science data collection/transfer.
+Operations of the Gateway will also include a robotic arm for installing experiments, a science airlock, and the ability to conduct operations on each element.
+Internal and external payloads will be operated during crewed and uncrewed periods.
+Payloads will need the specified Gateway resources available during operations.
+Most payloads would not require crew interaction (likely apart from instrument installation and setup) and would continue to operate during uncrewed periods.
+Resource interfaces between Gateway modules and the internal research accommodations (facilities) and between the accommodations and the payloads need to be standardized throughout Gateway.
+Maximizes placement flexibility for internal payload facilities and payloads.
+Minimizes flight hardware development to support payloads.
+Minimizes ground support equipment for hardware test.
+The Gateway shall allocate a minimum of 5.15 Tbits/day (644 GB/day) for utilization use.
+Rationale: Out of the total 7.49Tbits per day data downlink capacity, 5.15 T/Bits per day is allocated for utilization (science & technology demonstrations) use.
+The Gateway shall provide a minimum of three (3) cubic meters (m3) of internal volume for powered payload locations.
+Rationale: Gateway is intended to support diverse science, (along with associated exploration), activities and close Strategic Knowledge Gaps.
+Gateway will accommodate crewed and uncrewed placement and operation of science assets e.g. internal investigations, external packages, ISRU operations, transfer of surface samples, sample return to Earth, and science data collection/transfer.
+Enhanced operations of the Gateway could also include addition of a robotic arm, a science airlock, and ability to conduct operations on each element.
+Active internal (pressurized) utilization payloads will need internal volume and systems resources (power, data, cooling, etc.).
+This document may only be released according to the Destination Control Statement on the front cover.
+This volume does not include stowage volume or volume for multi-use equipment (separate requirements), however this volume may be used for stowage if powered payloads are not occupying the volume.
+This volume does not include payloads or equipment that could be deployed in open spaces or passageways.
+The Gateway shall provide a minimum of five (5) cubic meters (m3) <TBR-L2-GW-016> of internal volume for utilization stowage, in addition to powered payload volume allocations.
+Rationale: Gateway is intended to support diverse science, (along with associated exploration), activities and close Strategic Knowledge Gaps.
+Gateway will accommodate crewed and uncrewed placement and operation of science assets e.g. internal investigations, external packages, ISRU operations, transfer of surface samples, sample return to Earth, and science data collection/transfer.
+Enhanced operations of the Gateway could also include addition of a robotic arm, a science airlock, and ability to conduct operations on each element.
+Internal stowage volume will be needed to store utilization equipment, consumables, samples, etc., in addition to active payload volume.
+This volume can vary and will be managed mission by mission along with all stowage capacity.
+The Gateway shall provide <TBD-L2-GW-016> internal volume for powered multi-use equipment to support utilization, in addition to volume for powered payload locations.
+Rationale: Gateway is intended to support diverse science, (along with associated exploration), activities and close Strategic Knowledge Gaps.
+Gateway will accommodate crewed and uncrewed placement and operation of science assets e.g. internal investigations, external packages, ISRU operations, transfer of surface samples, sample return to Earth, and science data collection/transfer.
+Enhanced operations of the Gateway could also include addition of a robotic arm, a science airlock, and ability to conduct operations on each element.
+There is an expressed need for internal lab equipment to support biology and sample analysis from multiple utilization customers.
+The equipment may include glovebox, microscope, video equipment, freezer, centrifuge, etc., in addition to volume allocated for powered payload locations (separate requirement).
+The Gateway shall have a minimum of 1,000 kg on-orbit mass allocated for utilization, for each crewed Gateway mission.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: Gateway is intended to support diverse science, (along with associated exploration), activities and close Strategic Knowledge Gaps.
+Gateway will accommodate crewed and uncrewed placement and operation of science assets e.g. internal investigations, external packages, ISRU operations, transfer of surface samples, sample return to Earth, and science data collection/transfer.
+Enhanced operations of the Gateway could also include addition of a robotic arm, a science airlock, and ability to conduct operations on each element.
+The Gateway shall provide enhanced inherent capabilities to facilitate science.
+Rationale: PLACEHOLDER: with expectation for clarification of enhanced capabilities as we move forward.
+Enhancements of inherent gateway capabilities (e.g., precise clock, precise position knowledge) will capture more science return.
+Rationale: Several utilization payloads would benefit from deployment from the Gateway into final orbits.
+The deployer could be on a Gateway module, the external robotic arm, a docked visiting vehicle, docked logistics module, or docked tug.
+Capability should allow reloading of the deployer by crew or IVR internally, or by EVR externally, depending on the deployer as additional small satellites (e.g. CubeSats) are sent to the Gateway.
+The Gateway shall transfer samples and external hardware from free-flying vehicles and payloads to the Gateway interior for return to Earth.
+Rationale: Gateway is intended to support diverse science, (along with associated exploration), activities and close Strategic Knowledge Gaps.
+Gateway will accommodate crewed and uncrewed placement and operation of science assets e.g. internal investigations, external packages, ISRU operations, transfer of surface samples, sample return to Earth, and science data collection/transfer.
+Operations of the Gateway will also include a robotic arm for installing experiments, a science airlock, and the ability to conduct operations on each element.
+The Gateway systems will need to collectively support the return of lunar, planetary, and other extraterrestrial samples from free-flying vehicles to the Gateway and transfer them inside for potential decontamination, processing, analysis, and transfer to the crew vehicle for return to Earth.
+External payloads may also have samples and hardware that need to be returned to Earth.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway Probability of LOC shall have a mean value no greater than 1 in 400, for a 30-day crewed mission including 2 EVAs.
+Rationale: NASA policy as described in NPR 8705.2C is to establish thresholds and goals for human space exploration for flight crew safety in terms of the probability of LOC.
+The LOC limits specified are established to ensure that the Gateway modules adhere to the Agency thresholds.
+These LOC values are derived from an integrated preliminary Gateway Probabilistic Risk Assessment (PRA) model used to determine LOC achievability which includes the following modules: PPE, MHC, I-HAB, US-HAB, LM, Airlock and EVR.
+The Gateway Probability of LOM shall have a mean value no greater than 1 in 10, for a one year mission including a 30-day crewed mission.
+The LOM value has been derived from an integrated preliminary Gateway PRA model used to determine LOM achievability which includes the following modules: PPE, MHC, I-HAB, US-HAB, LM, Airlock and EVR.
+LOM includes all credible, quantifiable events that result in the loss of a defined major mission objective (as agreed to be the Gateway Program) initiated by Gateway such as LOC, Loss of Gateway, Inability to dock of a major element, etc.
+The Gateway modules shall have the predicted system hardware reliability listed below, for its defined mission environment considering capability for corrective maintenance in space.
+Rationale: Gateway module allocated hardware reliability supports Gateway compliance with program-level LOC and LOM requirements.
+Software was explicitly excluded because there is not a standard methodology for performing software reliability.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway critical systems shall be designed to be maintainable.
+Rationale: Maintenance activities may include removal, replacement, service, and repair of hardware and software.
+Gateway items that require preventative and corrective maintenance activities need to be repairable with minimal crew support per DSG-RQMT- to unavailability of Downmass for repair at depot.
+Both upmass and onboard stowage resources are constrained resources for Gateway; therefore, hardware items to be maintained must be defined at the lowest level possible, balancing mass and volume of the items with crew time required for repair.
+These items must be accessible and repairable by both crew and robotic assets utilizing Gateway IVA and EVA Common Tool Kits.
+Robotics is the preferred means of performing maintenance due to the limited availability of the crew; however, early phases of Gateway assembly will be solely reliant on crew for maintenance.
+IVR capabilities will be developed in later phases of Gateway assembly per DSG-SPEC- IVR-013, Gateway Program Subsystem Specification for Intravehicular Robotics.
+External hardware items to be maintained should be designed for maintenance via extravehicular robotic assets.
+During Lander operations only 2 crew will be available on board Gateway to support any maintenance activity.
+The Gateway shall meet all safety, performance, utilization, and mission objectives during and after exposure to the natural space environments as defined in SLS-SPEC-159 Cross-Program Design Specification for Natural Environments (DSNE).
+Rationale: Gateway hardware must perform in all of the natural space environments including ionizing radiation, meteoroids, orbital debris (during earth orbit and departure phase), plasma/spacecraft charging, natural thermal, gravitational, etc., environments.
+The Gateway shall design for induced loads in accordance with <TBD-L2-GW-068> Gateway Loads Data Book.
+This document may only be released according to the Destination Control Statement on the front cover.
+Rationale: Gateway structures need to be able to limit the induced loads they produce as well as perform thru induced loads imparted upon them.
+The Gateway shall comply with the intent of the technical standards listed in Table 3.3.2-1, Type Technical Authorities have designated these as Type 2 documents.
+As such, Gateway Elements or Modules may choose to directly adopt or propose alternates as long as they meet or exceed the intent of the imposed standard, in accordance with the process defined in DSG- PLAN-007, Gateway Systems Engineering Management Plan.
+The standards identified with an * in Table 3.3.2-1 are standards for which PPE will either meet through the use of an equivalent partner standard or provide justification for the suitability of non-equivalent standards including relevant data on past usage and other supplemental information that allows NASA/GW Program to adequately assess the risk.
+In the case of a tailored standard (Table 3.3.2-2 Type 2 Tailored Technical Standards Table), PPE will provide justification against the original standard from which the tailored standard was derived from.
+All other standards identified in the table are not applicable to PPE.
+Rationale: Gateway must apply documents, specifications, and standards to its modules/elements in order to adequately ensure quality of end items delivered, and the ability of those end items to meet their functional and human certification requirements.
+The applicable standard and revision is identified below.
+If new document revisions are released, the program will determine applicability and update as necessary.
+When the normative references cited within documents do not have an applicable revision specified, the applicable revision shall also be the current revision in effect on the date of the agreement or contract.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall comply with requirements and standards specified in DSG-RQMT-002, Human System Requirements (HSR).
+The NASA Health and Medical Technical Authority (HMTA) has designated this as a Type alternates as long as they meet or exceed the imposed requirement, in accordance with the process defined in DSG-PLAN-007, Gateway Systems Engineering Management Plan.
+Rationale: DSG-RQMT-002 includes content tailored from NASA-STD-3001, NASA Space Flight Human-System Standard, as required by NPR 8705.2C.
+HSR content includes cross-cutting requirements applicable to all Gateway systems, including content such as physical accommodation of humans, acceleration and vibration limits, acoustics, designing for cleanliness, design for physical hazards, and operability.
+The Gateway shall be designed with fluids that comply with Multi-Purpose Crew Vehicle (MPCV) 70156, Cross Program Fluid Procurement and Use Control Specification.
+Rationale: Derived requirement similar to SSP 30573, Space Station Fluid Procurement and Use Control Specification.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Gateway shall be designed so that exterior Gateway surfaces are cleaned before close-out, including areas that are inaccessible in the final assembly and that may act as contamination sources while on orbit.
+Rationale: Derived requirement similar to SSP 30426, Space Station External Contamination Control Requirements.
+The Gateway shall provide interfaces for the Visiting Vehicle, per the Interface Design Document (IDD) <TBD-L2-GW-021>.
+The Gateway shall provide interfaces to the Gateway Ground Segment per documents <TBD- L2-GW-037> Gateway to Ground Network ICD, <TBD-L2-GW-066> VSM to Ground ICD, and <TBD-L2-GW-067> Gateway Program International Ground System Specification.
+The Gateway to Ground Network ICD (IRD) will provide the communication link interfaces between Gateway and the ground networks starting from the frame formatting, encoding, encryption, modulation and transmission to signal reception, decryption, decoding and frame parsing.
+This information ensures that the ground network and the gateway systems are compatible with each other and provide reliable data exchange.
+VSM’s success depends on the ability of the ground operators to use, understand and configure it and the VSM to Ground ICD will provide the necessary details to enable this.
+Gateway Program International Ground System Specification will provide the interface requirements for the Gateway Ground Segment.
+The Gateway Ground Segment will function as Gateway’s connection to the ground assets.
+The Gateway Ground Segment describes the ground-based resources necessary for operations of onorbit Gateway, Lunar Systems and payloads, and it contains detailed specifications related to realtime command, control, and monitoring support.
+This document may only be released according to the Destination Control Statement on the front cover.
+This section contains the formal qualification requirements that are necessary to show compliance with each "shall" statement in section 3.0 of this document.
+Only "shall" statements are checked for compliance.
+Data for the reliability analysis will be collected and recorded during qualification.
+If development test data is intended to be used to qualify hardware, its intent shall be predeclared.
+Qualification represents the broadest scope of verification within design tolerances to which a configuration/end item is subjected.
+It encompasses the entire range of activity to verify that the design conforms to requirements when subjected to environmental life-cycle conditions.
+Flight-like hardware is normally used for qualification testing.
+If actual flight hardware is used for qualification testing, it shall be in accordance with <TBD-L2-GW-069>.
+Environmental models shall be used to represent environments that cannot be achieved under the conditions of ground testing.
+Simulators, used for verifying requirements, require validation so that the item undergoing qualification cannot distinguish between the simulator and actual operational hardware/software.
+Integration testing and checkout shall be conducted during end item buildup.
+Activities such as continuity checking and interface mating will be performed.
+Activities such as major component operation in the installed environment, support equipment compatibility, and documentation verification will be proven during qualification.
+In general, system-level qualification will be conducted by analysis of segment-level qualification results.
+When analysis of segment-level qualification results is not adequate to prove compliance with the stated requirement, system level qualification activities will be conducted as identified in section 4.2.
+This document may only be released according to the Destination Control Statement on the front cover.
+Verification by inspection is the physical evaluation of equipment and/or documentation to verify design artifacts.
+Inspection is used to verify construction features, workmanship, and physical dimensions and condition (such as cleanliness, surface finish, and locking hardware).
+The Placard shall be Red.” can be verified by inspection.
+Verification by analysis is a process used in lieu of (or in addition to) testing and inspection.
+Analysis techniques may include statistics and qualitative analysis, computer and hardware simulations, and computer modeling.
+Analysis should be used only when all of the following conditions apply: (1) rigorous and accurate analysis is possible, (2) verification by test is not feasible or cost effective, and (3) verification by inspection is not adequate.
+When conducting Verification by Analysis, the models, simulations, and analysis tools must be accredited by the Program and Element/Modules to certify appropriate fidelity and software development quality.
+The accreditation authority ensures that the tools have sufficient pedigree to provide usable information for decision-making, at the level of criticality required.
+The primary distinction between demonstration and test is that demonstrations provide qualitative results, whereas tests provide quantitative results.
+Human in the Loop (HITL) is a method of demonstration that may be used to verify complex integrated crew requirements.
+Verification by test is the actual operation of flight, flight-like, and/or ground equipment with the necessary test support equipment and test environment.
+Test also applies to hardware or software verifications done on flight like systems in test facilities such as a System Integration Laboratory (SIL) and a Multi-element Integration Test (MEIT) lab.
+The audit will check that the child requirements have been satisfied and that the verification of all lower level requirements satisfy the parent requirement.
+If the audit requires additional analysis to complete, it should be verified by analysis.
+A ground based test facility that integrates avionics and software products across the gateway, supported by high fidelity simulation.
+GRAIL will integrate Engineering Units (EUs) or other appropriate fidelity avionics hardware.
+GRAIL will include interfaces to ground and mission control assets as needed by verification requirements.
+The facility uses both non-flight and flight-equivalent hardware to support testing.
+A ground based facility that tests Radio Frequency (RF), wireless, and other communication channels.
+The GICTF includes flight-like infrastructure used by mission operations.
+This document may only be released according to the Destination Control Statement on the front cover.
+The facility will software (including antenna with hat coupler would be ideal, but may need to defer that for the compatibility testing that is required by ground station).
+The (ICTL) will interface with Gateway avionics system integrated with flight software, and have connectivity with the respective ground stations and mission operations centers.
+The integrated comm facility will communication system with the new waveforms.
+A ground based capability to support integration across multiple Gateway module facilities and operations capabilities.
+GIVS includes interfaces to cross-program includes interface to Visiting Vehicle simulations.
+Ground based test facility to demonstrate robotics operations on Gateway.
+Ground based facility to verify docking operations.
+A simulation that models kinematic robot arm operations.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+The ability to separate a spacecraft (and its crew) from Earth-bound control and oversight.
+CATASTROPHIC HAZARD: Any hazard that may result in: loss of life or permanently disabling injury; loss of Gateway; loss of crew carrying vehicle; a condition that requires safe haven; or a loss of a major ground facility.
+This document may only be released according to the Destination Control Statement on the front cover.
+CRITICAL SYSTEMS: (a) Systems which could cause a catastrophic or critical hazard if unable to perform the required functions, as determined by hazard analysis in accordance with DSG- RQMT-011 Gateway Program Hazard Analysis Requirements; (b) Components with criticality category 1/1R/1S or criticality category 2/2R failure modes as assessed by Failure Modes and Effects Analysis in accordance with DSG-RQMT-011, Gateway Program Failure Modes and Effects/Critical Items List (FMEA/CIL) Requirements.
+The generic reference to a loss of function or functional redundancy.
+Specifically: the inability of a system, subsystem, string, ORU, component, or part to perform its required function(s) within specified limits.
+Manufacturing processes that are identical or significantly similar* to those utilized in flight equipment.
+Contain parts or assemblies that are identical or significantly similar* in design to flight hardware (includes manufacturing processes at the piece part level).
+Equipment whose design (electrical or mechanical) is identical or significantly similar* to flight equipment when such design is critical to functional performance.
+HABITABLE: Intended for crew occupancy and maintained in a condition suitable for human life.
+HABITABLE VOLUME: Any part of the spacecraft volume used by crewmembers to work, sleep, eat, egress, ingress or perform tasks necessary for a safe and successful mission.
+HAZARD: A condition, a state, an event, or an activity, internal or external to a system, which has the potential to cause harm.
+HAZARD CONTROLS: Appropriate means for eliminating, reducing, or controlling risk.
+HUMAN-IN-THE-LOOP (HITL): HITL evaluation is a special class of demonstration and test verification methods, requiring human interaction with a system.
+Typically the human subjects are NASA crewmembers as a subset of the test subject population that perform identified tasks in a representative mockup, prototype, engineering, or flight unit.
+The fidelity of mockups used for human-in-the-loop evaluations may range from low-fidelity, minimal representation, to high- fidelity, complete physical and/or functional representation, relevant to the evaluation.
+Human- in-the-loop demonstration/test is performed for complex interfaces or operations that are difficult to verify through modeling analysis, such as physical accommodation for crew ingress and egress.
+Demonstration/test requirements are normally implemented within a test plan, operations plan, or test procedure.
+This document may only be released according to the Destination Control Statement on the front cover.
+INSOLATION: (a) In general, solar radiation received at a surface.
+The rate at which direct solar radiation is incident upon a unit horizontal surface at any point on or above the surface.
+The function of keeping items or equipment in, or restoring them to, a specified operational condition.
+It includes servicing, test, inspection, adjustment/alignment, removal, replacement, access, assembly/disassembly, lubrication, operate, decontaminate, installation, fault location, calibration, condition determination, repair, modification, overhaul, rebuilding, and reclamation.
+Maintenance includes both preventive and corrective maintenance both on-orbit and on the ground.
+METEOROID/ORBITAL DEBRIS PENETRATION: Penetration of the habitable module M/OD protection system is defined as complete penetration or detached spall of the pressure shell by the primary impacting particle.
+MISSION CRITICAL FAILURE: A failure of an ORU or system that results in a scrubbed mission.
+The total remaining volume available to on-orbit crew after accounting for the loss of volume due to deployed equipment, stowage, and any other structural inefficiencies (nooks and crannies) which decrease functional volume.
+OPERATOR ERROR: An inadvertent action by flight crew or ground operator that could eliminate, disable, or defeat an inhibit, redundant system, containment feature, or other design feature that is provided to control a hazard.
+The intent is not to include all possible actions by a crewperson that could result in an inappropriate action but rather to limit the scope of error to those actions which were inadvertent errors such as an out-of-sequence step in a procedure or wrong keystroke or an inadvertent switch throw.
+The operation of one spacecraft in the vicinity of another spacecraft with the relative positions stabilized and the attitude rate small enough to preclude the requirements for re-rendezvous.
+STORAGE ITEM: An item which has a permanent internal or external location on orbit in a passive state until it is required or consumed.
+STOWAGE ITEM: An item which is placed temporarily in a location, and which is later removed and installed in a system, placed in a permanent location, or used to support Station or payload operations.
+This document may only be released according to the Destination Control Statement on the front cover.
+The table To Be Determined Items lists the specific To Be Determined (TBD) items in the document that are not yet known.
+The TBD is inserted as a placeholder wherever the required data is needed and is formatted in bold type within carets.
+The TBD item is numbered based on the document number, including the annex, volume, and book number, as applicable (i.e., <TBD-XXXXX-001> is the first undetermined item assigned in the document).
+As each TBD is resolved, the updated text is inserted in each place that the TBD appears in the document and the item is removed from this table.
+As new TBD items are assigned, they will be added to this list in accordance with the above described numbering scheme.
+This document may only be released according to the Destination Control Statement on the front cover.
+The table To Be Resolved Issues lists the specific To Be Resolved (TBR) issues in the document that are not yet known.
+The TBR is inserted as a placeholder wherever the required data is needed and is formatted in bold type within carets.
+The TBR issue is numbered based on the document number, including the annex, volume, and book number, as applicable (i.e., <TBR-XXXXX-001> is the first unresolved issue assigned in the document).
+As each TBR is resolved, the updated text is inserted in each place that the TBR appears in the document and the issue is removed from this table.
+As new TBR issues are assigned, they will be added to this list in accordance with the above described numbering scheme.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+The Verification Matrix identifies the L2 Program verification methods that will be utilized to satisfy the L2 Program requirements.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+HSR 10049, HSR 10052, and HSR 10081. sufficient for required processing (metrics TBD).
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
+This document may only be released according to the Destination Control Statement on the front cover.
